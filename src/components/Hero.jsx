@@ -11,7 +11,7 @@ export default function Hero({ isDarkMode }) {
 
       <a
         href="/gallery"
-        className="mt-8 inline-block px-8 py-3 bg-red-500 text-white rounded-full font-bold hover:bg-red-600"
+        className={`mt-8 inline-block px-8 py-3 bg-red-500 ${isDarkMode ? 'text-white' : 'text-black' } rounded-full font-bold hover:bg-red-600`}
       >
         Explore Gallery
       </a>
