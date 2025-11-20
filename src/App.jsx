@@ -540,6 +540,84 @@ const Home = ({ isDarkMode }) => {
 };
 
 // ==========================================
+// COMPONENT: GALLERY CARD (Extracted for Image Loading State)
+// ==========================================
+const GalleryCard = ({
+  item,
+  user,
+  isDarkMode,
+  cardBg,
+  border,
+  textMain,
+  handleEdit,
+  handleDelete,
+}) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  return (
+    <Link
+      to={`/gallery/${item.id}`}
+      className={`group relative rounded-xl overflow-hidden border cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 ${cardBg} ${border}`}
+    >
+      {user && (
+        <div className="absolute top-2 right-2 z-20 flex gap-2">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              handleEdit(item);
+            }}
+            className={`${THEME.secondary.bg} text-white p-2 rounded-full ${THEME.secondary.bgHover} shadow-lg`}
+            title="Edit"
+          >
+            <Pencil size={16} />
+          </button>
+          <button
+            onClick={(e) => handleDelete(item.id, e)}
+            className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700 shadow-lg"
+            title="Delete"
+          >
+            <Trash2 size={16} />
+          </button>
+        </div>
+      )}
+
+      {/* IMPROVED IMAGE CONTAINER WITH LOADER */}
+      <div
+        className={`aspect-square overflow-hidden relative ${
+          isDarkMode ? "bg-slate-900" : "bg-stone-100"
+        }`}
+      >
+        {/* Spinner - Only visible when image is NOT loaded */}
+        {!isImageLoaded && (
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <Loader2 className={`animate-spin ${THEME.accent.text}`} size={32} />
+          </div>
+        )}
+
+        <img
+          src={item.image}
+          alt={item.title}
+          loading="lazy"
+          onLoad={() => setIsImageLoaded(true)}
+          className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-110 ${
+            isImageLoaded ? "opacity-100 blur-0" : "opacity-0 blur-sm"
+          }`}
+        />
+        
+        <div className="absolute top-2 left-2 px-2 py-1 bg-black/60 text-white text-xs rounded backdrop-blur-sm z-10">
+          {item.difficulty}
+        </div>
+      </div>
+
+      <div className="p-4">
+        <h3 className={`text-lg font-bold mb-2 ${textMain}`}>{item.title}</h3>
+      </div>
+    </Link>
+  );
+};
+
+// ==========================================
 // COMPONENT: GALLERY PAGE
 // ==========================================
 const Gallery = ({ isDarkMode, user }) => {
@@ -957,61 +1035,17 @@ const Gallery = ({ isDarkMode, user }) => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((item) => (
-            <Link
-              to={`/gallery/${item.id}`}
+            <GalleryCard
               key={item.id}
-              className={`group relative rounded-xl overflow-hidden border cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 ${cardBg} ${border}`}
-            >
-              {user && (
-                <div className="absolute top-2 right-2 z-10 flex gap-2">
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      handleEdit(item);
-                    }}
-                    className={`${THEME.secondary.bg} text-white p-2 rounded-full ${THEME.secondary.bgHover} shadow-lg`}
-                    title="Edit"
-                  >
-                    <Pencil size={16} />
-                  </button>
-                  <button
-                    onClick={(e) => handleDelete(item.id, e)}
-                    className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700 shadow-lg"
-                    title="Delete"
-                  >
-                    <Trash2 size={16} />
-                  </button>
-                </div>
-              )}
-
-              {/* IMPROVED IMAGE CONTAINER (Square Aspect Ratio) */}
-              <div
-                className={`aspect-square overflow-hidden relative ${
-                  isDarkMode ? "bg-slate-900" : "bg-gray-100"
-                }`}
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute top-2 left-2 px-2 py-1 bg-black/60 text-white text-xs rounded backdrop-blur-sm">
-                  {item.difficulty}
-                </div>
-              </div>
-
-              <div className="p-4">
-                {/* <div
-                  className={`text-xs font-bold ${THEME.accent.text} mb-1 uppercase`}
-                >
-                  {item.category}
-                </div> */}
-                <h3 className={`text-lg font-bold mb-2 ${textMain}`}>
-                  {item.title}
-                </h3>
-              </div>
-            </Link>
+              item={item}
+              user={user}
+              isDarkMode={isDarkMode}
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+              cardBg={cardBg}
+              border={border}
+              textMain={textMain}
+            />
           ))}
         </div>
       )}
