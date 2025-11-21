@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { THEME } from "../config/theme";
 import ProjectCard from "../components/ProjectCard";
+import SkillCard from "../components/SkillCard";
 
 import {
   FaPython,
@@ -159,37 +160,20 @@ const Home = ({ isDarkMode }) => {
         </div>
       </header>
 
-      {/* 2. TECHNICAL SKILLS (FLIP CARDS) */}
+      {/* 2. TECHNICAL SKILLS */}
       <section>
         <div className="flex items-center gap-3 mb-8">
           <Terminal className={`w-6 h-6 ${THEME.accent.text}`} />
           <h2 className="text-3xl font-bold">Technical Skills</h2>
         </div>
-
+        
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {SKILLS.map((skill) => (
-            // FLIP CARD CONTAINER
-            <div
-              key={skill.name}
-              className="group h-32 perspective-1000 cursor-default"
-            >
-              {/* INNER CONTAINER (Handles Rotation) */}
-              <div className="relative h-full w-full transition-transform duration-500 transform-style-3d group-hover:rotate-y-180">
-                {/* FRONT SIDE (Text) */}
-                <div
-                  className={`absolute inset-0 backface-hidden flex items-center justify-center rounded-xl border font-bold text-lg shadow-sm ${cardBg} ${border}`}
-                >
-                  {skill.name}
-                </div>
-
-                {/* BACK SIDE (Icon & Color) */}
-                <div
-                  className={`absolute inset-0 backface-hidden rotate-y-180 flex items-center justify-center rounded-xl ${skill.color} ${skill.text} shadow-lg`}
-                >
-                  <skill.icon size={48} />
-                </div>
-              </div>
-            </div>
+            <SkillCard 
+              key={skill.name} 
+              skill={skill} 
+              isDarkMode={isDarkMode} 
+            />
           ))}
         </div>
       </section>
