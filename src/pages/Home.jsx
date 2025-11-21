@@ -109,7 +109,7 @@ const Home = ({ isDarkMode }) => {
         </h1>
 
         <p className={`text-xl md:text-2xl mb-8 max-w-2xl mx-auto ${textSub}`}>
-          Aspiring Software Engineer
+          Software Engineer
         </p>
 
         {/* Contact Links */}
@@ -202,7 +202,7 @@ const Home = ({ isDarkMode }) => {
             <Briefcase className={`w-6 h-6 ${THEME.accent.text}`} />
             <h2 className="text-3xl font-bold">Experience</h2>
           </div>
-          <div className={`p-6 rounded-2xl border h-full ${cardBg} ${border}`}>
+          <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
             <div className="flex justify-between items-start mb-4">
               <div>
                 <h3 className="text-xl font-bold">Intern - Web Developer</h3>
