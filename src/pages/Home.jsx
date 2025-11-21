@@ -15,6 +15,23 @@ import {
 import { THEME } from "../config/theme";
 import ProjectCard from "../components/ProjectCard";
 
+import {
+  FaPython,
+  FaJava,
+  FaReact,
+  FaPhp,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+} from "react-icons/fa";
+import {
+  SiCplusplus,
+  SiJavascript,
+  SiMysql,
+  SiPlatformdotsh,
+  SiTailwindcss,
+} from "react-icons/si";
+
 // ==========================================
 // COMPONENT: HOME PAGE (DIGITAL CV)
 // ==========================================
@@ -22,6 +39,40 @@ const Home = ({ isDarkMode }) => {
   const textSub = isDarkMode ? THEME.dark.textSub : THEME.light.textSub;
   const cardBg = isDarkMode ? THEME.dark.card : THEME.light.card;
   const border = isDarkMode ? THEME.dark.border : THEME.light.border;
+
+  // Skills
+  const SKILLS = [
+    {
+      name: "Python",
+      icon: FaPython,
+      color: "bg-blue-800",
+      text: "text-white",
+    },
+    { name: "Java", icon: FaJava, color: "bg-red-500", text: "text-white" },
+    {
+      name: "C/C++",
+      icon: SiCplusplus,
+      color: "bg-blue-700",
+      text: "text-white",
+    },
+    {
+      name: "JavaScript",
+      icon: SiJavascript,
+      color: "bg-yellow-400",
+      text: "text-black",
+    },
+    { name: "React", icon: FaReact, color: "bg-sky-500", text: "text-white" },
+    { name: "PHP", icon: FaPhp, color: "bg-indigo-500", text: "text-white" },
+    {
+      name: "HTML/CSS",
+      icon: FaHtml5,
+      color: "bg-orange-500",
+      text: "text-white",
+    },
+    { name: "SQL", icon: SiMysql, color: "bg-blue-600", text: "text-white" },
+    { name: "Git", icon: FaGitAlt, color: "bg-orange-600", text: "text-white" },
+    { name: "Tailwind", icon: SiTailwindcss, color: "bg-gray-700", text: "text-white" },
+  ];
 
   // Define your projects data here
   const PROJECTS = [
@@ -70,7 +121,7 @@ const Home = ({ isDarkMode }) => {
             }`}
           >
             <Mail size={16} className={THEME.accent.text} />
-            Email Me
+            Email
           </a>
 
           <a
@@ -108,30 +159,36 @@ const Home = ({ isDarkMode }) => {
         </div>
       </header>
 
-      {/* 2. TECHNICAL SKILLS */}
+      {/* 2. TECHNICAL SKILLS (FLIP CARDS) */}
       <section>
         <div className="flex items-center gap-3 mb-8">
           <Terminal className={`w-6 h-6 ${THEME.accent.text}`} />
           <h2 className="text-3xl font-bold">Technical Skills</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            "Python",
-            "Java",
-            "C/C++",
-            "JavaScript",
-            "React",
-            "PHP",
-            "HTML/CSS",
-            "SQL",
-            "Git",
-            "PlatformOS",
-          ].map((skill) => (
+
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {SKILLS.map((skill) => (
+            // FLIP CARD CONTAINER
             <div
-              key={skill}
-              className={`p-4 rounded-xl border text-center font-medium transition-transform hover:-translate-y-1 ${cardBg} ${border}`}
+              key={skill.name}
+              className="group h-32 perspective-1000 cursor-default"
             >
-              {skill}
+              {/* INNER CONTAINER (Handles Rotation) */}
+              <div className="relative h-full w-full transition-transform duration-500 transform-style-3d group-hover:rotate-y-180">
+                {/* FRONT SIDE (Text) */}
+                <div
+                  className={`absolute inset-0 backface-hidden flex items-center justify-center rounded-xl border font-bold text-lg shadow-sm ${cardBg} ${border}`}
+                >
+                  {skill.name}
+                </div>
+
+                {/* BACK SIDE (Icon & Color) */}
+                <div
+                  className={`absolute inset-0 backface-hidden rotate-y-180 flex items-center justify-center rounded-xl ${skill.color} ${skill.text} shadow-lg`}
+                >
+                  <skill.icon size={48} />
+                </div>
+              </div>
             </div>
           ))}
         </div>
