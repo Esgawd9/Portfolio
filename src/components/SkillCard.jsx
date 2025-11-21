@@ -15,7 +15,7 @@ const SkillCard = ({ skill, isDarkMode }) => {
 
   return (
     <div
-      className="group h-32 perspective-1000 cursor-pointer"
+      className="group h-32 perspective-1000 cursor-pointer select-none"
       onClick={handleFlip}
     >
       {/* INNER CONTAINER 
