@@ -1,8 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Github, FileText, Terminal, Briefcase, GraduationCap, Code, Hash, Cpu, ExternalLink } from "lucide-react";
+import {
+  Mail,
+  Github,
+  FileText,
+  Terminal,
+  Briefcase,
+  GraduationCap,
+  Code,
+  Hash,
+  Cpu,
+  ExternalLink,
+} from "lucide-react";
 import { THEME } from "../config/theme";
-
 
 // ==========================================
 // COMPONENT: HOME PAGE (DIGITAL CV)
@@ -187,7 +197,7 @@ const Home = ({ isDarkMode }) => {
             className={`rounded-2xl overflow-hidden shadow-lg border flex flex-col ${cardBg} ${border}`}
           >
             <div
-              className={`p-8 flex-grow flex flex-col justify-center items-center ${bgSecondary}`}
+              className={`p-8 grow flex flex-col justify-center items-center ${bgSecondary}`}
             >
               <Hash size={64} className={`${THEME.accent.text} mb-4`} />
               <h3 className="text-2xl font-bold">Maze Solver</h3>
@@ -228,7 +238,7 @@ const Home = ({ isDarkMode }) => {
             className={`rounded-2xl overflow-hidden shadow-lg border flex flex-col ${cardBg} ${border}`}
           >
             <div
-              className={`p-8 flex-grow flex flex-col justify-center items-center ${bgSecondary}`}
+              className={`p-8 grow flex flex-col justify-center items-center ${bgSecondary}`}
             >
               <Cpu size={64} className={`${THEME.accent.text} mb-4`} />
               <h3 className="text-2xl font-bold">Snake Game AI</h3>

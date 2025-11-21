@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { X, ArrowLeft, ZoomIn, User, Scroll, Calendar, Layers } from "lucide-react";
+import {
+  X,
+  ArrowLeft,
+  ZoomIn,
+  User,
+  Scroll,
+  Calendar,
+  Layers,
+} from "lucide-react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { THEME } from "../config/theme";
-
 
 // ==========================================
 // COMPONENT: DETAIL PAGE
@@ -116,22 +123,19 @@ const OrigamiDetail = ({ isDarkMode }) => {
               </div>
             </div>
           </div>
-          
         </div>
-        
       </div>
       <div>
-            <h3 className="text-xl font-bold mb-3">Description</h3>
-            <p className={`leading-relaxed ${textSub} w-2/3`}>
-              {item.desc || "No description."}
-            </p>
-          </div>
+        <h3 className="text-xl font-bold mb-3">Description</h3>
+        <p className={`leading-relaxed ${textSub} w-2/3`}>
+          {item.desc || "No description."}
+        </p>
+      </div>
     </div>
   );
 };
 
 export default OrigamiDetail;
-
 
 // ==========================================
 // COMPONENT: INFO ROW

@@ -2,7 +2,6 @@ import React from "react";
 import { Github, Mail } from "lucide-react";
 import { THEME } from "../config/theme";
 
-
 // ==========================================
 // COMPONENT: FOOTER
 // ==========================================
@@ -32,7 +31,6 @@ const Footer = ({ isDarkMode }) => {
           >
             <Mail size={14} /> Email
           </a>
-          
         </div>
       </div>
     </footer>

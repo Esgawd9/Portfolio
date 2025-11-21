@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Pencil, Trash2, Loader2 } from "lucide-react";
 import { THEME } from "../config/theme";
 
-
 // ==========================================
 // COMPONENT: GALLERY CARD (Extracted for Image Loading State)
 // ==========================================
@@ -56,7 +55,10 @@ const GalleryCard = ({
         {/* Spinner - Only visible when image is NOT loaded */}
         {!isImageLoaded && (
           <div className="absolute inset-0 flex items-center justify-center z-10">
-            <Loader2 className={`animate-spin ${THEME.accent.text}`} size={32} />
+            <Loader2
+              className={`animate-spin ${THEME.accent.text}`}
+              size={32}
+            />
           </div>
         )}
 
@@ -69,7 +71,7 @@ const GalleryCard = ({
             isImageLoaded ? "opacity-100 blur-0" : "opacity-0 blur-sm"
           }`}
         />
-        
+
         <div className="absolute top-2 left-2 px-2 py-1 bg-black/60 text-white text-xs rounded backdrop-blur-sm z-10">
           {item.difficulty}
         </div>

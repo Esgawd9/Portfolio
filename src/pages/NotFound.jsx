@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Hash } from "lucide-react";
 import { THEME } from "../config/theme";
 
-
 // ==========================================
 // COMPONENT: NOT FOUND (404)
 // ==========================================

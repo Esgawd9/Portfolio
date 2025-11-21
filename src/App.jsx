@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./config/firebase";
 import { THEME } from "./config/theme";
@@ -26,7 +31,7 @@ const ScrollToTop = () => {
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [user, setUser] = useState(null);
-  
+
   // Login Modal State (kept global for access from Navbar)
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [email, setEmail] = useState("");
@@ -47,7 +52,7 @@ const App = () => {
       setEmail("");
       setPassword("");
     } catch (error) {
-      alert("Login Failed");
+      alert("Login Failed" + error.message);
     }
   };
 
@@ -111,7 +116,7 @@ const App = () => {
           </div>
         )}
 
-        <main className="max-w-6xl mx-auto px-4 py-12 flex-grow w-full">
+        <main className="max-w-6xl mx-auto px-4 py-12 grow w-full">
           <Routes>
             <Route path="/" element={<Home isDarkMode={isDarkMode} />} />
             <Route
