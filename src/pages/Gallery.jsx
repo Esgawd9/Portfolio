@@ -1,12 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Pencil, Plus, Search, Upload, Loader2, Grid } from "lucide-react";
-import { collection, onSnapshot, addDoc, deleteDoc, updateDoc, doc, serverTimestamp } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  addDoc,
+  deleteDoc,
+  updateDoc,
+  doc,
+  serverTimestamp,
+} from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../config/firebase";
 import { THEME } from "../config/theme";
 import GalleryCard from "../components/GalleryCard";
-
 
 // ==========================================
 // COMPONENT: GALLERY PAGE
@@ -445,5 +452,3 @@ const Gallery = ({ isDarkMode, user }) => {
 };
 
 export default Gallery;
-
-
