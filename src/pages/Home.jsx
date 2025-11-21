@@ -195,7 +195,7 @@ const Home = ({ isDarkMode }) => {
                 </p>
               </div>
               <span
-                className={`text-xs font-bold uppercase tracking-wide ${THEME.accent.lightBg} ${THEME.accent.lightText} px-2 py-1 rounded`}
+                className="text-sm opacity-60"
               >
                 2025 (3 months)
               </span>
