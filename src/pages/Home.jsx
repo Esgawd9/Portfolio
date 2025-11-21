@@ -13,6 +13,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { THEME } from "../config/theme";
+import ProjectCard from "../components/ProjectCard";
 
 // ==========================================
 // COMPONENT: HOME PAGE (DIGITAL CV)
@@ -21,7 +22,32 @@ const Home = ({ isDarkMode }) => {
   const textSub = isDarkMode ? THEME.dark.textSub : THEME.light.textSub;
   const cardBg = isDarkMode ? THEME.dark.card : THEME.light.card;
   const border = isDarkMode ? THEME.dark.border : THEME.light.border;
-  const bgSecondary = isDarkMode ? "bg-slate-700" : "bg-stone-100";
+
+  // Define your projects data here
+  const PROJECTS = [
+    {
+      id: 1,
+      title: "Project 1",
+      subtitle: "Subtitle Here",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      icon: Cpu,
+      tags: ["Tag1", "Tag2", "Tag3"],
+      link: null, // No live link for this one
+      repo: "https://github.com/Esgawd9",
+    },
+    {
+      id: 2,
+      title: "Project 2",
+      subtitle: "Subtitle Here",
+      description:
+        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      icon: Cpu,
+      tags: ["Tag1", "Tag2", "Tag3"],
+      link: null, // No live link for this one
+      repo: "https://github.com/Esgawd9",
+    },
+  ];
 
   return (
     <div className="space-y-24 animate-in slide-in-from-left-4 duration-500">
@@ -185,97 +211,21 @@ const Home = ({ isDarkMode }) => {
         </section>
       </div>
 
-      {/* 4. FEATURED PROJECTS */}
+      {/* 4. FEATURED PROJECTS (Refactored) */}
       <section id="projects">
         <div className="flex items-center gap-3 mb-8">
           <Code className={`w-6 h-6 ${THEME.accent.text}`} />
           <h2 className="text-3xl font-bold">Featured Projects</h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Project 1 */}
-          <div
-            className={`rounded-2xl overflow-hidden shadow-lg border flex flex-col ${cardBg} ${border}`}
-          >
-            <div
-              className={`p-8 grow flex flex-col justify-center items-center ${bgSecondary}`}
-            >
-              <Hash size={64} className={`${THEME.accent.text} mb-4`} />
-              <h3 className="text-2xl font-bold">Maze Solver</h3>
-            </div>
-            <div className="p-8">
-              <h3 className="text-xl font-bold mb-2">
-                Pathfinding Algorithm Visualizer
-              </h3>
-              <p className={`mb-4 text-sm ${textSub}`}>
-                Interactive web app visualizing maze generation and solving
-                algorithms (DFS, BFS).
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span
-                  className={`px-2 py-1 text-xs rounded ${THEME.accent.lightBg} ${THEME.accent.lightText} font-bold`}
-                >
-                  JavaScript
-                </span>
-                <span
-                  className={`px-2 py-1 text-xs rounded ${THEME.accent.lightBg} ${THEME.accent.lightText} font-bold`}
-                >
-                  HTML/CSS
-                </span>
-              </div>
-              <a
-                href="/maze.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2 ${THEME.accent.text} font-bold hover:underline`}
-              >
-                Launch Project <ExternalLink size={16} />
-              </a>
-            </div>
-          </div>
 
-          {/* Project 2 */}
-          <div
-            className={`rounded-2xl overflow-hidden shadow-lg border flex flex-col ${cardBg} ${border}`}
-          >
-            <div
-              className={`p-8 grow flex flex-col justify-center items-center ${bgSecondary}`}
-            >
-              <Cpu size={64} className={`${THEME.accent.text} mb-4`} />
-              <h3 className="text-2xl font-bold">Snake Game AI</h3>
-            </div>
-            <div className="p-8">
-              <h3 className="text-xl font-bold mb-2">Autonomous Agent</h3>
-              <p className={`mb-4 text-sm ${textSub}`}>
-                AI-controlled Snake developed in Java using A* and BFS
-                pathfinding algorithms. Focused on optimization and logic.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span
-                  className={`px-2 py-1 text-xs rounded ${THEME.accent.lightBg} ${THEME.accent.lightText} font-bold`}
-                >
-                  Java
-                </span>
-                <span
-                  className={`px-2 py-1 text-xs rounded ${THEME.accent.lightBg} ${THEME.accent.lightText} font-bold`}
-                >
-                  A* Algorithm
-                </span>
-                <span
-                  className={`px-2 py-1 text-xs rounded ${THEME.accent.lightBg} ${THEME.accent.lightText} font-bold`}
-                >
-                  AI
-                </span>
-              </div>
-              <a
-                href="https://github.com/Esgawd9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2 ${THEME.accent.text} font-bold hover:underline`}
-              >
-                View on GitHub <Github size={16} />
-              </a>
-            </div>
-          </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          {PROJECTS.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              isDarkMode={isDarkMode}
+            />
+          ))}
         </div>
       </section>
     </div>
