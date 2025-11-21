@@ -29,7 +29,29 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // Initialize state by checking Local Storage first, then System Preference
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // 1. Check if user has a saved preference in localStorage
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme !== null) {
+      // Return true if "dark", false otherwise
+      return savedTheme === "dark";
+    }
+
+    // 2. If no saved preference, check the device's system setting
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return true;
+    }
+
+    // 3. Default to light mode
+    return false;
+  });
+
+  // Effect: Save to Local Storage whenever the theme changes
+  useEffect(() => {
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  }, [isDarkMode]);
   const [user, setUser] = useState(null);
 
   // Login Modal State (kept global for access from Navbar)
