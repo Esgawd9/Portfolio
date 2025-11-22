@@ -27,14 +27,14 @@ const Navbar = ({ isDarkMode, toggleTheme, user, setShowLoginModal }) => {
           to="/"
           className="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition-opacity"
         >
-          <Layers className={`w-6 h-6 ${THEME.accent.text}`} />
+          <img src="/origami_bird.svg" alt="Origami Bird" className="w-6 h-6" />
           <span className={textClasses}>Portfolio</span>
         </Link>
 
         <div className="flex items-center gap-6">
           <div className="hidden md:flex gap-6 font-medium text-sm">
             <Link to="/" className={`transition-colors ${isActive("/")}`}>
-              CV & Projects
+              Home
             </Link>
             <Link
               to="/gallery"
