@@ -72,7 +72,12 @@ const Home = ({ isDarkMode }) => {
     },
     { name: "SQL", icon: SiMysql, color: "bg-blue-600", text: "text-white" },
     { name: "Git", icon: FaGitAlt, color: "bg-orange-600", text: "text-white" },
-    { name: "Tailwind", icon: SiTailwindcss, color: "bg-gray-700", text: "text-white" },
+    {
+      name: "Tailwind",
+      icon: SiTailwindcss,
+      color: "bg-gray-700",
+      text: "text-white",
+    },
   ];
 
   // Define your projects data here
@@ -166,14 +171,10 @@ const Home = ({ isDarkMode }) => {
           <Terminal className={`w-6 h-6 ${THEME.accent.text}`} />
           <h2 className="text-3xl font-bold">Technical Skills</h2>
         </div>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {SKILLS.map((skill) => (
-            <SkillCard 
-              key={skill.name} 
-              skill={skill} 
-              isDarkMode={isDarkMode} 
-            />
+            <SkillCard key={skill.name} skill={skill} isDarkMode={isDarkMode} />
           ))}
         </div>
       </section>
@@ -194,9 +195,7 @@ const Home = ({ isDarkMode }) => {
                   Origin Develop Kft.
                 </p>
               </div>
-              <span
-                className="text-sm opacity-60"
-              >
+              <span className="text-sm opacity-60 shrink-0 ml-4">
                 2025 (3 months)
               </span>
             </div>
@@ -230,7 +229,9 @@ const Home = ({ isDarkMode }) => {
             <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
               <div className="flex justify-between items-start mb-2">
                 <h3 className="text-xl font-bold">Software Engineering BSc</h3>
-                <span className="text-sm opacity-60">2022 - Present</span>
+                <span className="text-sm opacity-60 shrink-0 ml-4">
+                  2022 - Present
+                </span>
               </div>
               <p className={`${THEME.accent.text} font-medium`}>
                 University of Szeged
@@ -244,7 +245,7 @@ const Home = ({ isDarkMode }) => {
             >
               <div className="flex justify-between items-start mb-2">
                 <h3 className="text-lg font-bold">High School Diploma</h3>
-                <span className="text-sm">2017 - 2021</span>
+                <span className="text-sm shrink-0 ml-4">2017 - 2021</span>
               </div>
               <p>Dombóvári Illyés Gyula Gimnázium</p>
             </div>
