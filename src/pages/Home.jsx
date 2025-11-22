@@ -79,14 +79,14 @@ const Home = ({ isDarkMode }) => {
   const PROJECTS = [
     {
       id: 1,
-      title: "Project 1",
-      subtitle: "Subtitle Here",
+      title: "Reflex Game",
+      subtitle: "Mobile Application",
       description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "A simple reflex game developed in Java/Gradle using Firebase for backend services. Players can test their reaction times and compete on leaderboards.",
       icon: Cpu,
-      tags: ["Tag1", "Tag2", "Tag3"],
+      tags: ["App", "Game", "Firebase"],
       link: null, // No live link for this one
-      repo: "https://github.com/Esgawd9",
+      repo: "https://github.com/Esgawd9/mobilalk_beadando_2025",
     },
     {
       id: 2,
@@ -106,7 +106,7 @@ const Home = ({ isDarkMode }) => {
       {/* 1. HERO SECTION */}
       <header className="text-center py-12">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-          Pinter <span className={THEME.accent.text}>Zsombor</span>
+          Zsombor <span className={THEME.accent.text}>Pinter</span>
         </h1>
 
         <p className={`text-xl md:text-2xl mb-8 max-w-2xl mx-auto ${textSub}`}>
@@ -143,7 +143,7 @@ const Home = ({ isDarkMode }) => {
             to="/gallery"
             className={`px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} transition-transform hover:-translate-y-1 inline-flex items-center`}
           >
-            View Origami Gallery
+            Check out my Art
           </Link>
 
           {/* Download Resume Button */}
@@ -253,7 +253,8 @@ const Home = ({ isDarkMode }) => {
       </div>
 
       {/* 4. FEATURED PROJECTS (Refactored) */}
-      <section id="projects">
+      {/* TODO */}
+      {/* <section id="projects">
         <div className="flex items-center gap-3 mb-8">
           <Code className={`w-6 h-6 ${THEME.accent.text}`} />
           <h2 className="text-3xl font-bold">Featured Projects</h2>
@@ -268,7 +269,7 @@ const Home = ({ isDarkMode }) => {
             />
           ))}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

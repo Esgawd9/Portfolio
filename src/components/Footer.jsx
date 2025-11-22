@@ -14,7 +14,7 @@ const Footer = ({ isDarkMode }) => {
     <footer className={`py-10 text-center border-t mt-20 ${footerClass}`}>
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className={textClass}>
-          © {year} Pintér Zsombor. Built with React & Firebase.
+          © {year} Zsombor Pintér. Built with React & Firebase.
         </p>
         <div className="flex gap-6 text-sm font-medium">
           <a
