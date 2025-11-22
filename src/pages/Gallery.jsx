@@ -395,7 +395,8 @@ const Gallery = ({ isDarkMode, user }) => {
               className={`pl-10 pr-4 py-2 rounded-lg border w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-red-500 ${inputClass}`}
             />
           </div>
-          <div
+          {/* TODO: do the category filtering */}
+          {/* <div
             className={`inline-flex p-1 rounded-lg overflow-x-auto ${
               isDarkMode ? "bg-slate-800" : "bg-stone-200"
             }`}
@@ -415,7 +416,7 @@ const Gallery = ({ isDarkMode, user }) => {
                 {cat}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
 
