@@ -21,7 +21,7 @@ const GalleryCard = ({
   return (
     <Link
       to={`/gallery/${item.id}`}
-      className={`group relative rounded-xl overflow-hidden border cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 ${cardBg} ${border}`}
+      className={`group relative rounded-xl overflow-hidden  cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 ${cardBg} ${border}`}
     >
       {user && (
         <div className="absolute top-2 right-2 z-20 flex gap-2">
@@ -78,7 +78,7 @@ const GalleryCard = ({
       </div>
 
       <div className="p-4">
-        <h3 className={`text-lg font-bold mb-2 ${textMain}`}>{item.title}</h3>
+        <h3 className={`text-lg text-center font-bold mb-2 ${textMain}`}>{item.title}</h3>
       </div>
     </Link>
   );
