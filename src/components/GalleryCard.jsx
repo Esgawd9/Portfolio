@@ -54,7 +54,7 @@ const GalleryCard = ({
       >
         {/* Spinner - Only visible when image is NOT loaded */}
         {!isImageLoaded && (
-          <div className="absolute inset-0 flex items-center justify-center z-10">
+          <div className={`absolute inset-0 flex items-center justify-center z-10 animate-pulse ${isDarkMode ? "bg-slate-800" : "bg-stone-200"}`}>
             <Loader2
               className={`animate-spin ${THEME.accent.text}`}
               size={32}
