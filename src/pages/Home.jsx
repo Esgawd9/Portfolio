@@ -192,7 +192,7 @@ const Home = ({ isDarkMode }) => {
               <div>
                 <h3 className="text-xl font-bold">Intern - Web Developer</h3>
                 <p className={`${THEME.accent.text} font-bold`}>
-                  Origin Develop Kft.
+                  origin/develop Kft.
                 </p>
               </div>
               <span className="text-sm opacity-60 shrink-0 ml-4">
