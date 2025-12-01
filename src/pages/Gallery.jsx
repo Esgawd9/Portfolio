@@ -425,7 +425,7 @@ const Gallery = ({ isDarkMode, user }) => {
           {[1, 2, 3, 4, 5, 6].map((n) => (
             <div
               key={n}
-              className={`h-80 rounded-xl ${
+              className={`h-106 rounded-xl ${
                 isDarkMode ? "bg-slate-800" : "bg-stone-200"
               }`}
             ></div>
