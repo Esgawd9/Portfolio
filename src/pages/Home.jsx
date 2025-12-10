@@ -260,7 +260,7 @@ const Home = ({ isDarkMode, openContact }) => {
         </section>
       </div>
 
-      {/* 4. FEATURED PROJECTS (Refactored) */}
+      {/* 4. FEATURED PROJECTS */}
       {/* TODO */}
       {/* <section id="projects">
         <div className="flex items-center gap-3 mb-8">
