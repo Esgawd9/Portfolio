@@ -166,7 +166,8 @@ const Home = ({ isDarkMode, openContact }) => {
             onClick={openContact}
             className={`cursor-pointer px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} transition-transform hover:-translate-y-1 inline-flex items-center`}
           >
-            Contact Me
+            <Mail size={16} className="mr-2" />
+            Get in Touch
           </button>
         </div>
       </header>
