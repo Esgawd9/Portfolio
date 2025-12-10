@@ -12,6 +12,7 @@ import { THEME } from "./config/theme";
 // Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ContactModal from "./components/ContactModal";
 
 // Pages
 import Home from "./pages/Home";
@@ -47,6 +48,8 @@ const App = () => {
     // 3. Default to light mode
     return false;
   });
+
+  const [showContactModal, setShowContactModal] = useState(false);
 
   // Effect: Save to Local Storage whenever the theme changes
   useEffect(() => {
@@ -97,6 +100,12 @@ const App = () => {
           setShowLoginModal={setShowLoginModal}
         />
 
+        <ContactModal
+          isOpen={showContactModal}
+          onClose={() => setShowContactModal(false)}
+          isDarkMode={isDarkMode}
+        />
+
         {/* Login Modal */}
         {showLoginModal && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm">
@@ -140,7 +149,15 @@ const App = () => {
 
         <main className="max-w-6xl mx-auto px-4 py-12 grow w-full">
           <Routes>
-            <Route path="/" element={<Home isDarkMode={isDarkMode} />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  isDarkMode={isDarkMode}
+                  openContact={() => setShowContactModal(true)}
+                />
+              }
+            />
             <Route
               path="/gallery"
               element={<Gallery isDarkMode={isDarkMode} user={user} />}
