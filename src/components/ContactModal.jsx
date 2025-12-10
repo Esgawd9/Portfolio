@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   X,
-  Send,
   Loader2,
   CheckCircle,
   AlertCircle,
