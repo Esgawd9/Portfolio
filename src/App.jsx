@@ -108,10 +108,14 @@ const App = () => {
 
         {/* Login Modal */}
         {showLoginModal && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm">
+          <div
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 backdrop-blur-sm"
+            onClick={() => setShowLoginModal(false)}
+          >
             <form
               onSubmit={handleLogin}
               className="bg-white p-8 rounded-lg shadow-xl w-96 text-black"
+              onClick={(e) => e.stopPropagation()}
             >
               <h2 className="text-xl font-bold mb-4">Admin Access</h2>
               <input
@@ -132,14 +136,11 @@ const App = () => {
                 <button
                   type="button"
                   onClick={() => setShowLoginModal(false)}
-                  className="px-4 py-2 text-gray-500"
+                  className={`cursor-pointer px-4 py-2 ${THEME.accent.bg} text-white rounded ${THEME.accent.bgHover}`}
                 >
                   Cancel
                 </button>
-                <button
-                  type="submit"
-                  className={`px-4 py-2 ${THEME.accent.bg} text-white rounded ${THEME.accent.bgHover}`}
-                >
+                <button type="submit" className="px-4 py-2 text-gray-500">
                   Login
                 </button>
               </div>

@@ -21,7 +21,9 @@ const OrigamiDetail = ({ isDarkMode }) => {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const skeletonClass = `rounded-xl ${isDarkMode ? "bg-slate-800" : "bg-stone-200"}`;
+  const skeletonClass = `rounded-xl ${
+    isDarkMode ? "bg-slate-800" : "bg-stone-200"
+  }`;
 
   // Theme shortcuts
   const textSub = isDarkMode ? THEME.dark.textSub : THEME.light.textSub;
@@ -41,15 +43,14 @@ const OrigamiDetail = ({ isDarkMode }) => {
   if (loading) {
     return (
       <div className="animate-pulse space-y-8 max-w-6xl mx-auto">
-        {/* 1. Back Button Skeleton */}
+        {/* Back Button Skeleton */}
         <div className={`h-6 w-32 ${skeletonClass}`} />
 
-        {/* 2. Title Skeleton */}
+        {/* Title Skeleton */}
         <div className={`h-12 w-3/4 pb-4 ${skeletonClass}`} />
 
-        {/* 3. Main Content Grid Skeleton */}
+        {/* Main Content Grid Skeleton */}
         <div className="flex flex-col lg:flex-row gap-12">
-          
           {/* Left Column: Large Image Placeholder */}
           <div className="lg:w-2/3">
             <div className={`w-full aspect-video shadow-lg ${skeletonClass}`} />
@@ -57,10 +58,14 @@ const OrigamiDetail = ({ isDarkMode }) => {
 
           {/* Right Column: Info Panel Skeleton */}
           <div className="lg:w-1/3 space-y-8">
-            <div className={`p-6 border rounded-xl h-64 space-y-4 ${isDarkMode ? "border-slate-700" : "border-stone-200"}`}>
+            <div
+              className={`p-6 border rounded-xl h-64 space-y-4 ${
+                isDarkMode ? "border-slate-700" : "border-stone-200"
+              }`}
+            >
               {/* Panel Title */}
               <div className={`h-6 w-1/2 mb-6 ${skeletonClass}`} />
-              
+
               {/* Info Rows (Artist, Paper, etc) */}
               <div className="space-y-4">
                 <div className="flex gap-3">
@@ -89,11 +94,11 @@ const OrigamiDetail = ({ isDarkMode }) => {
           </div>
         </div>
 
-        {/* 4. Description Skeleton */}
+        {/* Description Skeleton */}
         <div className="space-y-3 w-2/3">
-            <div className={`h-4 w-full ${skeletonClass}`} />
-            <div className={`h-4 w-full ${skeletonClass}`} />
-            <div className={`h-4 w-3/4 ${skeletonClass}`} />
+          <div className={`h-4 w-full ${skeletonClass}`} />
+          <div className={`h-4 w-full ${skeletonClass}`} />
+          <div className={`h-4 w-3/4 ${skeletonClass}`} />
         </div>
       </div>
     );
