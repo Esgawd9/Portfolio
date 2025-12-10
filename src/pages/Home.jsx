@@ -11,10 +11,12 @@ import {
   Hash,
   Cpu,
   ExternalLink,
+  Palette,
 } from "lucide-react";
 import { THEME } from "../config/theme";
 import ProjectCard from "../components/ProjectCard";
 import SkillCard from "../components/SkillCard";
+import ContactModal from "../components/ContactModal";
 
 import {
   FaPython,
@@ -36,7 +38,7 @@ import {
 // ==========================================
 // COMPONENT: HOME PAGE (DIGITAL CV)
 // ==========================================
-const Home = ({ isDarkMode }) => {
+const Home = ({ isDarkMode, openContact }) => {
   const textSub = isDarkMode ? THEME.dark.textSub : THEME.light.textSub;
   const cardBg = isDarkMode ? THEME.dark.card : THEME.light.card;
   const border = isDarkMode ? THEME.dark.border : THEME.light.border;
@@ -120,16 +122,19 @@ const Home = ({ isDarkMode }) => {
 
         {/* Contact Links */}
         <div className="flex flex-wrap justify-center gap-4 mb-10 text-sm">
-          <a
-            href="mailto:zsombor.pinter0105@gmail.com"
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors ${border} ${
-              isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"
+          
+          <Link
+            to="/gallery"
+            className={`cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors ${
+              isDarkMode
+                ? "border-slate-700 hover:bg-slate-800"
+                : "border-stone-200 hover:bg-stone-100"
             }`}
           >
-            <Mail size={16} className={THEME.accent.text} />
-            Email
-          </a>
-
+            <Palette size={16} className={THEME.accent.text} />
+            Check out my Art
+          </Link>
+          
           <a
             href="https://github.com/Esgawd9"
             target="_blank"
@@ -141,27 +146,29 @@ const Home = ({ isDarkMode }) => {
             <Github size={16} className={THEME.accent.text} />
             GitHub
           </a>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            to="/gallery"
-            className={`px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} transition-transform hover:-translate-y-1 inline-flex items-center`}
-          >
-            Check out my Art
-          </Link>
 
           {/* Download Resume Button */}
           <a
             href="/resume.pdf"
             download="Zsombor_Pinter_Resume.pdf"
-            className={`px-8 py-3 rounded-full font-bold border inline-flex items-center gap-2 transition-transform hover:-translate-y-1 ${border} ${
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors ${border} ${
               isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"
             }`}
           >
             <FileText size={18} />
             Download CV
           </a>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-4">
+          
+
+          <button
+            onClick={openContact}
+            className={`cursor-pointer px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} transition-transform hover:-translate-y-1 inline-flex items-center`}
+          >
+            Contact Me
+          </button>
         </div>
       </header>
 

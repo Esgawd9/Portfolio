@@ -61,7 +61,7 @@ const Navbar = ({ isDarkMode, toggleTheme, user, setShowLoginModal }) => {
             )}
             <button
               onClick={toggleTheme}
-              className={`p-2 rounded-full ${
+              className={`cursor-pointer p-2 rounded-full ${
                 isDarkMode
                   ? "hover:bg-slate-700 text-yellow-400"
                   : "hover:bg-stone-200 text-stone-600"
