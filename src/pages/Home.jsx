@@ -10,7 +10,6 @@ import {
   Code,
   Hash,
   Cpu,
-  ExternalLink,
   Palette,
 } from "lucide-react";
 import { THEME } from "../config/theme";
