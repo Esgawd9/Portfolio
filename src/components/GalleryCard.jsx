@@ -1,6 +1,6 @@
 // =========================================
 // FILE: GalleryCard.jsx
-// DESCRIPTION: A card component for displaying origami models in the gallery with image loading state.
+// DESCRIPTION: Card component for displaying individual gallery items.
 // =========================================
 
 import React, { useState } from "react";
@@ -8,16 +8,10 @@ import { Link } from "react-router-dom";
 import { Pencil, Trash2, Loader2 } from "lucide-react";
 import { THEME } from "../config/theme";
 
-// ==========================================
-// COMPONENT: GALLERY CARD (Extracted for Image Loading State)
-// ==========================================
 const GalleryCard = ({
   item,
   user,
   isDarkMode,
-  cardBg,
-  border,
-  textMain,
   handleEdit,
   handleDelete,
 }) => {
@@ -26,24 +20,25 @@ const GalleryCard = ({
   return (
     <Link
       to={`/gallery/${item.id}`}
-      className={`group relative rounded-xl overflow-hidden border cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 ${cardBg} ${border}`}
+      className="group relative block w-full aspect-square rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl"
     >
+      {/* --- ADMIN CONTROLS (Top Right) --- */}
       {user && (
-        <div className="absolute top-2 right-2 z-20 flex gap-2">
+        <div className="absolute top-3 right-3 z-30 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               handleEdit(item);
             }}
-            className={`${THEME.secondary.bg} text-white p-2 rounded-full ${THEME.secondary.bgHover} shadow-lg`}
+            className="bg-white/90 text-slate-800 p-2 rounded-full hover:bg-blue-500 hover:text-white shadow-lg backdrop-blur-sm transition-colors"
             title="Edit"
           >
             <Pencil size={16} />
           </button>
           <button
             onClick={(e) => handleDelete(item.id, e)}
-            className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700 shadow-lg"
+            className="bg-white/90 text-slate-800 p-2 rounded-full hover:bg-red-500 hover:text-white shadow-lg backdrop-blur-sm transition-colors"
             title="Delete"
           >
             <Trash2 size={16} />
@@ -51,19 +46,13 @@ const GalleryCard = ({
         </div>
       )}
 
-      {/* IMPROVED IMAGE CONTAINER WITH LOADER */}
-      <div
-        className={`aspect-square overflow-hidden relative ${
-          isDarkMode ? "bg-slate-900" : "bg-stone-100"
-        }`}
-      >
-        {/* Spinner - Only visible when image is NOT loaded */}
+      {/* --- IMAGE CONTAINER --- */}
+      <div className={`w-full h-full relative ${isDarkMode ? "bg-slate-800" : "bg-gray-200"}`}>
+        
+        {/* Loading Spinner */}
         {!isImageLoaded && (
-          <div className={`absolute inset-0 flex items-center justify-center z-10 animate-pulse ${isDarkMode ? "bg-slate-800" : "bg-stone-200"}`}>
-            <Loader2
-              className={`animate-spin ${THEME.accent.text}`}
-              size={32}
-            />
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <Loader2 className="animate-spin text-gray-400" size={32} />
           </div>
         )}
 
@@ -72,18 +61,26 @@ const GalleryCard = ({
           alt={item.title}
           loading="lazy"
           onLoad={() => setIsImageLoaded(true)}
-          className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-110 ${
-            isImageLoaded ? "opacity-100 blur-0" : "opacity-0 blur-sm"
+          className={`w-full h-full object-cover ${
+            isImageLoaded ? "opacity-100" : "opacity-0"
           }`}
         />
 
-        <div className="absolute top-2 left-2 px-2 py-1 bg-black/60 text-white text-xs rounded backdrop-blur-sm z-10">
-          {item.difficulty}
-        </div>
-      </div>
+        {/* --- GRADIENT OVERLAY --- */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent" />
 
-      <div className="p-4">
-        <h3 className={`text-lg text-center font-bold mb-2 ${textMain}`}>{item.title}</h3>
+        {/* --- CONTENT --- */}
+        <div className="absolute bottom-0 left-0 w-full p-6 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+            {/* Badge */}
+            <span className="inline-block px-2 py-1 mb-2 text-[10px] font-bold text-white bg-black/20 backdrop-blur-md rounded">
+                {item.difficulty}
+            </span>
+            
+            {/* Title */}
+            <h3 className="text-xl font-bold text-amber-50 leading-tight drop-shadow-md">
+                {item.title}
+            </h3>
+        </div>
       </div>
     </Link>
   );
