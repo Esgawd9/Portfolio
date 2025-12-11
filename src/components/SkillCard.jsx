@@ -1,3 +1,8 @@
+// =========================================
+// FILE: SkillCard.jsx
+// DESCRIPTION: A card component that displays a skill with flip animation.
+// =========================================
+
 import React, { useState } from "react";
 import { THEME } from "../config/theme";
 

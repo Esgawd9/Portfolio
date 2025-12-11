@@ -1,3 +1,8 @@
+// ========================================
+// FILE: theme.js
+// DESCRIPTION: Theme configuration for the portfolio website.
+// ========================================
+
 export const THEME = {
   accent: {
     text: "text-red-500",
