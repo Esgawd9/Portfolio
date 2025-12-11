@@ -1,3 +1,8 @@
+// =========================================
+// FILE: Footer.jsx
+// DESCRIPTION: Footer component for the portfolio website.
+// =========================================
+
 import React from "react";
 import { Github, Mail } from "lucide-react";
 import { THEME } from "../config/theme";

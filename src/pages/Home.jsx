@@ -1,4 +1,9 @@
-import React from "react";
+// ==========================================
+// FILE: Home.jsx
+// DESCRIPTION: Home page component for the portfolio website.
+// ==========================================
+
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Mail,
@@ -35,12 +40,17 @@ import {
 } from "react-icons/si";
 
 // ==========================================
-// COMPONENT: HOME PAGE (DIGITAL CV)
+// COMPONENT: HOME PAGE
 // ==========================================
 const Home = ({ isDarkMode, openContact }) => {
   const textSub = isDarkMode ? THEME.dark.textSub : THEME.light.textSub;
   const cardBg = isDarkMode ? THEME.dark.card : THEME.light.card;
   const border = isDarkMode ? THEME.dark.border : THEME.light.border;
+
+  // Set document title
+  useEffect(() => {
+    document.title = "Zsombor Pinter | Portfolio";
+  }, []);
 
   // Skills
   const SKILLS = [
@@ -81,7 +91,7 @@ const Home = ({ isDarkMode, openContact }) => {
     },
   ];
 
-  // Define your projects data here
+  // Define projects data
   const PROJECTS = [
     {
       id: 1,
@@ -109,7 +119,7 @@ const Home = ({ isDarkMode, openContact }) => {
 
   return (
     <div className="space-y-24 animate-in slide-in-from-left-4 duration-500">
-      {/* 1. HERO SECTION */}
+      {/* HERO SECTION */}
       <header className="text-center py-12">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
           Zsombor <span className={THEME.accent.text}>Pinter</span>
@@ -120,39 +130,49 @@ const Home = ({ isDarkMode, openContact }) => {
         </p>
 
         {/* Contact Links */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10 text-sm">
-          
+        <div
+          className="flex flex-col items-center justify-center gap-4 mb-10 text-sm sm:flex-row sm:flex-wrap" // <--- Added 'items-center' here
+        >
+          {/* Gallery */}
           <Link
             to="/gallery"
-            className={`cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors ${
-              isDarkMode
-                ? "border-slate-700 hover:bg-slate-800"
-                : "border-stone-200 hover:bg-stone-100"
-            }`}
+            className={`
+      cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors
+      ${
+        isDarkMode
+          ? "border-slate-700 hover:bg-slate-800"
+          : "border-stone-200 hover:bg-stone-100"
+      }
+    `}
           >
             <Palette size={16} className={THEME.accent.text} />
             Check out my Art
           </Link>
-          
+
+          {/* GitHub */}
           <a
             href="https://github.com/Esgawd9"
             target="_blank"
             rel="noreferrer"
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors ${border} ${
-              isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"
-            }`}
+            className={`
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors
+      ${border}
+      ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
+    `}
           >
             <Github size={16} className={THEME.accent.text} />
             GitHub
           </a>
 
-          {/* Download Resume Button */}
+          {/* Resume */}
           <a
             href="/resume.pdf"
             download="Zsombor_Pinter_Resume.pdf"
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors ${border} ${
-              isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"
-            }`}
+            className={`
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors
+      ${border}
+      ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
+    `}
           >
             <FileText size={18} />
             Download CV
@@ -160,8 +180,6 @@ const Home = ({ isDarkMode, openContact }) => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-4">
-          
-
           <button
             onClick={openContact}
             className={`cursor-pointer px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} transition-transform hover:-translate-y-1 inline-flex items-center`}
@@ -172,7 +190,7 @@ const Home = ({ isDarkMode, openContact }) => {
         </div>
       </header>
 
-      {/* 2. TECHNICAL SKILLS */}
+      {/* SKILLS */}
       <section>
         <div className="flex items-center gap-3 mb-8">
           <Terminal className={`w-6 h-6 ${THEME.accent.text}`} />
@@ -186,7 +204,7 @@ const Home = ({ isDarkMode, openContact }) => {
         </div>
       </section>
 
-      {/* 3. EXPERIENCE & EDUCATION */}
+      {/* EXPERIENCE & EDUCATION */}
       <div className="grid md:grid-cols-2 gap-12">
         {/* Experience */}
         <section>
@@ -261,7 +279,7 @@ const Home = ({ isDarkMode, openContact }) => {
       </div>
 
       {/* 4. FEATURED PROJECTS */}
-      {/* TODO */}
+      {/* TODO: get some projects to showcase */}
       {/* <section id="projects">
         <div className="flex items-center gap-3 mb-8">
           <Code className={`w-6 h-6 ${THEME.accent.text}`} />
