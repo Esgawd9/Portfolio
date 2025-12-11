@@ -1,3 +1,8 @@
+// =========================================
+// FILE: NotFound.jsx
+// DESCRIPTION: 404 Not Found page component for the portfolio website.
+// =========================================
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { Hash } from "lucide-react";

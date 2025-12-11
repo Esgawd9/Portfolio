@@ -1,3 +1,8 @@
+// =========================================
+// FILE: Navbar.jsx
+// DESCRIPTION: Navigation bar component for the portfolio website.
+// =========================================
+
 import { Link, useLocation } from "react-router-dom";
 import { Layers, LogOut, Lock, Sun, Moon } from "lucide-react";
 import { signOut } from "firebase/auth";

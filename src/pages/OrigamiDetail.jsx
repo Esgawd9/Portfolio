@@ -1,3 +1,8 @@
+// =========================================
+// FILE: OrigamiDetail.jsx
+// DESCRIPTION: Detail page component for individual origami models in the gallery.
+// =========================================
+
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import {

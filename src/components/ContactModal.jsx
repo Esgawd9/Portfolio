@@ -1,3 +1,8 @@
+// ========================================
+// FILE: ContactModal.jsx
+// DESCRIPTION: A modal component for contacting via a form with email sending functionality.
+// ========================================
+
 import React, { useState } from "react";
 import {
   X,
@@ -9,7 +14,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 import { THEME } from "../config/theme";
 
@@ -38,29 +43,31 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
     e.preventDefault();
     setStatus("sending");
 
-  
     // Send email via EmailJS
 
-    emailjs.send(
-      'service_pqsxpet',
-      'template_7fv1imt',
-      {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-      },
-      'qolHVChQUw9ZEGvMu'
-    ).then(() => {
-      setStatus("success");
-      setTimeout(() => {
-        onClose();
-        setStatus("idle");
-        setFormData({ name: "", email: "", message: "" });
-      }, 10000);
-    }).catch((error) => {
-      console.error('Failed:', error);
-      setStatus("error");
-    });
+    emailjs
+      .send(
+        "service_pqsxpet",
+        "template_7fv1imt",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "qolHVChQUw9ZEGvMu"
+      )
+      .then(() => {
+        setStatus("success");
+        setTimeout(() => {
+          onClose();
+          setStatus("idle");
+          setFormData({ name: "", email: "", message: "" });
+        }, 10000);
+      })
+      .catch((error) => {
+        console.error("Failed:", error);
+        setStatus("error");
+      });
   };
 
   return (
@@ -208,9 +215,7 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
                     <Loader2 size={20} className="animate-spin" /> Sending...
                   </>
                 ) : (
-                  <>
-                    Send Message
-                  </>
+                  <>Send Message</>
                 )}
               </button>
             </form>

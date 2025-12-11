@@ -1,3 +1,8 @@
+// =========================================
+// FILE: Gallery.jsx
+// DESCRIPTION: Gallery page component for the portfolio website.
+// =========================================
+
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Pencil, Plus, Search, Upload, Loader2, Grid } from "lucide-react";
@@ -21,8 +26,15 @@ import GalleryCard from "../components/GalleryCard";
 const Gallery = ({ isDarkMode, user }) => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // Filter & Search State
   const [activeTab, setActiveTab] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Set document title
+  useEffect(() => {
+    document.title = "Zsombor | Gallery";
+  }, []);
 
   // Form State
   const [formData, setFormData] = useState({

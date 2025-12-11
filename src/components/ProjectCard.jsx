@@ -1,3 +1,8 @@
+// =========================================
+// FILE: ProjectCard.jsx
+// DESCRIPTION: A card component that displays project details.
+// =========================================
+
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { THEME } from "../config/theme";

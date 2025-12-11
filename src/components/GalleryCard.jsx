@@ -1,3 +1,8 @@
+// =========================================
+// FILE: GalleryCard.jsx
+// DESCRIPTION: A card component for displaying origami models in the gallery with image loading state.
+// =========================================
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Pencil, Trash2, Loader2 } from "lucide-react";

@@ -1,3 +1,8 @@
+// ========================================
+// FILE: firebase.js
+// DESCRIPTION: Firebase configuration and initialization.
+// ========================================
+
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";

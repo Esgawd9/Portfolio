@@ -1,3 +1,8 @@
+// =========================================
+// FILE: App.jsx
+// DESCRIPTION: Main application component for the portfolio website.
+// =========================================
+
 import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
