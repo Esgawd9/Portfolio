@@ -49,7 +49,7 @@ const ProjectCard = ({ project, isDarkMode }) => {
           {tags.map((tag, index) => (
             <span
               key={index}
-              className={`px-2 py-1 text-xs rounded font-bold ${THEME.accent.lightBg} ${THEME.accent.lightText}`}
+              className={`px-2 py-1 text-xs rounded font-bold ${bgSecondary} ${textSub}`}
             >
               {tag}
             </span>

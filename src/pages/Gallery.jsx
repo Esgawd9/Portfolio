@@ -33,7 +33,7 @@ const Gallery = ({ isDarkMode, user }) => {
 
   // Set document title
   useEffect(() => {
-    document.title = "Zsombor | Gallery";
+    document.title = "Zsombor Pinter | Gallery";
   }, []);
 
   // Form State

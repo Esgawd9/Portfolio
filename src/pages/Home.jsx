@@ -91,28 +91,28 @@ const Home = ({ isDarkMode, openContact }) => {
     },
   ];
 
-  // Define projects data
+  // Projects
   const PROJECTS = [
     {
       id: 1,
       title: "Reflex Game",
-      subtitle: "Mobile Application",
+      subtitle: "Mobile App",
       description:
         "A simple reflex game developed in Java/Gradle using Firebase for backend services. Players can test their reaction times and compete on leaderboards.",
       icon: Cpu,
-      tags: ["App", "Game", "Firebase"],
+      tags: ["App", "Android", "Game", "Firebase"],
       link: null, // No live link for this one
-      repo: "https://github.com/Esgawd9/mobilalk_beadando_2025",
+      repo: "https://github.com/Esgawd9/Reflex-Game",
     },
     {
       id: 2,
-      title: "Project 2",
-      subtitle: "Subtitle Here",
+      title: "Chain Reaction (WIP)",
+      subtitle: "Multiplayer board game",
       description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "",
       icon: Cpu,
-      tags: ["Tag1", "Tag2", "Tag3"],
-      link: null, // No live link for this one
+      tags: ["Game", "Typescript", "Socket.io", "React", "Supabase", "Node.js", "Vercel", "Tailwind CSS"],
+      link: "https://esgawd9-chain-reaction.vercel.app", 
       repo: "https://github.com/Esgawd9",
     },
   ];
@@ -278,9 +278,9 @@ const Home = ({ isDarkMode, openContact }) => {
         </section>
       </div>
 
-      {/* 4. FEATURED PROJECTS */}
+      {/* FEATURED PROJECTS */}
       {/* TODO: get some projects to showcase */}
-      {/* <section id="projects">
+      <section id="projects">
         <div className="flex items-center gap-3 mb-8">
           <Code className={`w-6 h-6 ${THEME.accent.text}`} />
           <h2 className="text-3xl font-bold">Featured Projects</h2>
@@ -295,7 +295,7 @@ const Home = ({ isDarkMode, openContact }) => {
             />
           ))}
         </div>
-      </section> */}
+      </section>
     </div>
   );
 };
