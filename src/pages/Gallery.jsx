@@ -18,7 +18,10 @@ import {
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../config/firebase";
 import { THEME } from "../config/theme";
+
 import GalleryCard from "../components/GalleryCard";
+
+import SEO from "../components/SEO";
 
 // ==========================================
 // COMPONENT: GALLERY PAGE
@@ -30,11 +33,6 @@ const Gallery = ({ isDarkMode, user }) => {
   // Filter & Search State
   const [activeTab, setActiveTab] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-
-  // Set document title
-  useEffect(() => {
-    document.title = "Zsombor Pinter | Gallery";
-  }, []);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -200,215 +198,222 @@ const Gallery = ({ isDarkMode, user }) => {
   });
 
   return (
-    <div className="animate-in slide-in-from-right-4 duration-500">
-      {user && (
-        <div
-          className={`mb-12 p-6 rounded-xl border-2 border-dashed ${adminBg}`}
-        >
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="font-bold text-xl flex items-center gap-2">
-              {editingId ? (
-                <>
-                  <Pencil size={20} /> Edit Origami
-                </>
-              ) : (
-                <>
-                  <Plus size={20} /> Add New Origami
-                </>
-              )}
-            </h3>
-            {editingId && (
-              <button
-                onClick={handleCancelEdit}
-                className={`text-sm text-gray-500 ${THEME.accent.textHover} underline`}
-              >
-                Cancel Edit
-              </button>
-            )}
-          </div>
+    <>
+      <SEO
+        title="Zsombor Pinter | Gallery"
+        description="Browse a collection of origami models. Folded by Zsombor Pinter."
+        path="/gallery"
+      />
 
-          {formStatus.msg && (
-            <div
-              className={`mb-4 p-3 rounded flex gap-2 ${
-                formStatus.type === "error"
-                  ? "bg-red-100 text-red-700"
-                  : "bg-green-100 text-green-700"
-              }`}
-            >
-              {formStatus.msg}
-            </div>
-          )}
-
-          <form
-            onSubmit={handleSaveOrigami}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+      <div className="animate-in slide-in-from-right-4 duration-500">
+        {user && (
+          <div
+            className={`mb-12 p-6 rounded-xl border-2 border-dashed ${adminBg}`}
           >
-            <input
-              placeholder="Title"
-              className={inputClass}
-              value={formData.title}
-              onChange={(e) =>
-                setFormData({ ...formData, title: e.target.value })
-              }
-              disabled={isUploading}
-            />
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-bold text-xl flex items-center gap-2">
+                {editingId ? (
+                  <>
+                    <Pencil size={20} /> Edit Origami
+                  </>
+                ) : (
+                  <>
+                    <Plus size={20} /> Add New Origami
+                  </>
+                )}
+              </h3>
+              {editingId && (
+                <button
+                  onClick={handleCancelEdit}
+                  className={`text-sm text-gray-500 ${THEME.accent.textHover} underline`}
+                >
+                  Cancel Edit
+                </button>
+              )}
+            </div>
 
-            <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                placeholder="Image URL (Paste link here)"
-                className={inputClass}
-                value={formData.image}
-                onChange={(e) =>
-                  setFormData({ ...formData, image: e.target.value })
-                }
-                disabled={isUploading || imageFile}
-              />
-
-              <label
-                className={`flex flex-col items-center justify-center w-full h-12 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${dashBorder} ${hoverBg} ${
-                  isDarkMode ? "bg-slate-800" : "bg-white"
+            {formStatus.msg && (
+              <div
+                className={`mb-4 p-3 rounded flex gap-2 ${
+                  formStatus.type === "error"
+                    ? "bg-red-100 text-red-700"
+                    : "bg-green-100 text-green-700"
                 }`}
               >
-                <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <Upload size={16} />{" "}
-                  {imageFile ? imageFile.name : "Or upload file"}
-                </div>
-                <input
-                  type="file"
-                  className="hidden"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                  ref={fileInputRef}
-                  disabled={isUploading}
-                />
-              </label>
-            </div>
-
-            {(imagePreview || formData.image) && (
-              <div className="md:col-span-2 flex justify-center bg-black/5 p-2 rounded">
-                <img
-                  src={imagePreview || formData.image}
-                  alt="Preview"
-                  className="h-32 object-contain rounded"
-                />
+                {formStatus.msg}
               </div>
             )}
 
-            <select
-              className={inputClass}
-              value={formData.category}
-              onChange={(e) =>
-                setFormData({ ...formData, category: e.target.value })
-              }
-              disabled={isUploading}
+            <form
+              onSubmit={handleSaveOrigami}
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
             >
-              {categories
-                .filter((c) => c !== "All")
-                .map((c) => (
-                  <option key={c} value={c}>
-                    {c}
-                  </option>
-                ))}
-            </select>
-            <select
-              className={inputClass}
-              value={formData.difficulty}
-              onChange={(e) =>
-                setFormData({ ...formData, difficulty: e.target.value })
-              }
-              disabled={isUploading}
-            >
-              <option value="Simple">Simple</option>
-              <option value="Intermediate">Intermediate</option>
-              <option value="Complex">Complex</option>
-              <option value="Super Complex">Super Complex</option>
-            </select>
-            <input
-              type="date"
-              className={inputClass}
-              value={formData.date}
-              onChange={(e) =>
-                setFormData({ ...formData, date: e.target.value })
-              }
-              disabled={isUploading}
-            />
-            <input
-              placeholder="Artist / Designer"
-              className={inputClass}
-              value={formData.artist}
-              onChange={(e) =>
-                setFormData({ ...formData, artist: e.target.value })
-              }
-              disabled={isUploading}
-            />
-            <input
-              placeholder="Paper Type"
-              className={inputClass}
-              value={formData.paper}
-              onChange={(e) =>
-                setFormData({ ...formData, paper: e.target.value })
-              }
-              disabled={isUploading}
-            />
+              <input
+                placeholder="Title"
+                className={inputClass}
+                value={formData.title}
+                onChange={(e) =>
+                  setFormData({ ...formData, title: e.target.value })
+                }
+                disabled={isUploading}
+              />
 
-            <textarea
-              placeholder="Description..."
-              className={`${inputClass} md:col-span-2`}
-              rows="2"
-              value={formData.desc}
-              onChange={(e) =>
-                setFormData({ ...formData, desc: e.target.value })
-              }
-              disabled={isUploading}
-            />
+              <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  placeholder="Image URL (Paste link here)"
+                  className={inputClass}
+                  value={formData.image}
+                  onChange={(e) =>
+                    setFormData({ ...formData, image: e.target.value })
+                  }
+                  disabled={isUploading || imageFile}
+                />
 
-            <button
-              type="submit"
-              disabled={isUploading}
-              className={`md:col-span-2 text-white py-3 rounded font-bold flex items-center justify-center gap-2 ${
-                isUploading
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : editingId
-                  ? `${THEME.secondary.bg} ${THEME.secondary.bgHover}`
-                  : `${THEME.accent.bg} ${THEME.accent.bgHover}`
-              }`}
-            >
-              {isUploading ? (
-                <>
-                  <Loader2 className="animate-spin" />{" "}
-                  {editingId ? "Updating..." : "Uploading..."}
-                </>
-              ) : editingId ? (
-                "Update Origami"
-              ) : (
-                "Add to Gallery"
+                <label
+                  className={`flex flex-col items-center justify-center w-full h-12 border-2 border-dashed rounded-lg cursor-pointer transition-colors ${dashBorder} ${hoverBg} ${
+                    isDarkMode ? "bg-slate-800" : "bg-white"
+                  }`}
+                >
+                  <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <Upload size={16} />{" "}
+                    {imageFile ? imageFile.name : "Or upload file"}
+                  </div>
+                  <input
+                    type="file"
+                    className="hidden"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                    ref={fileInputRef}
+                    disabled={isUploading}
+                  />
+                </label>
+              </div>
+
+              {(imagePreview || formData.image) && (
+                <div className="md:col-span-2 flex justify-center bg-black/5 p-2 rounded">
+                  <img
+                    src={imagePreview || formData.image}
+                    alt="Preview"
+                    className="h-32 object-contain rounded"
+                  />
+                </div>
               )}
-            </button>
-          </form>
-        </div>
-      )}
 
-      <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-6">
-        <div className="flex items-center gap-3">
-          <Grid className={`w-6 h-6 ${THEME.accent.text}`} />
-          <h2 className="text-3xl font-bold">Gallery</h2>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4">
-          <div className="relative">
-            <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-              size={18}
-            />
-            <input
-              type="text"
-              placeholder="Search..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className={`pl-10 pr-4 py-2 rounded-lg border w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-red-500 ${inputClass}`}
-            />
+              <select
+                className={inputClass}
+                value={formData.category}
+                onChange={(e) =>
+                  setFormData({ ...formData, category: e.target.value })
+                }
+                disabled={isUploading}
+              >
+                {categories
+                  .filter((c) => c !== "All")
+                  .map((c) => (
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
+                  ))}
+              </select>
+              <select
+                className={inputClass}
+                value={formData.difficulty}
+                onChange={(e) =>
+                  setFormData({ ...formData, difficulty: e.target.value })
+                }
+                disabled={isUploading}
+              >
+                <option value="Simple">Simple</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Complex">Complex</option>
+                <option value="Super Complex">Super Complex</option>
+              </select>
+              <input
+                type="date"
+                className={inputClass}
+                value={formData.date}
+                onChange={(e) =>
+                  setFormData({ ...formData, date: e.target.value })
+                }
+                disabled={isUploading}
+              />
+              <input
+                placeholder="Artist / Designer"
+                className={inputClass}
+                value={formData.artist}
+                onChange={(e) =>
+                  setFormData({ ...formData, artist: e.target.value })
+                }
+                disabled={isUploading}
+              />
+              <input
+                placeholder="Paper Type"
+                className={inputClass}
+                value={formData.paper}
+                onChange={(e) =>
+                  setFormData({ ...formData, paper: e.target.value })
+                }
+                disabled={isUploading}
+              />
+
+              <textarea
+                placeholder="Description..."
+                className={`${inputClass} md:col-span-2`}
+                rows="2"
+                value={formData.desc}
+                onChange={(e) =>
+                  setFormData({ ...formData, desc: e.target.value })
+                }
+                disabled={isUploading}
+              />
+
+              <button
+                type="submit"
+                disabled={isUploading}
+                className={`md:col-span-2 text-white py-3 rounded font-bold flex items-center justify-center gap-2 ${
+                  isUploading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : editingId
+                    ? `${THEME.secondary.bg} ${THEME.secondary.bgHover}`
+                    : `${THEME.accent.bg} ${THEME.accent.bgHover}`
+                }`}
+              >
+                {isUploading ? (
+                  <>
+                    <Loader2 className="animate-spin" />{" "}
+                    {editingId ? "Updating..." : "Uploading..."}
+                  </>
+                ) : editingId ? (
+                  "Update Origami"
+                ) : (
+                  "Add to Gallery"
+                )}
+              </button>
+            </form>
           </div>
-          {/* TODO: do the category filtering */}
-          {/* <div
+        )}
+
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-6">
+          <div className="flex items-center gap-3">
+            <Grid className={`w-6 h-6 ${THEME.accent.text}`} />
+            <h2 className="text-3xl font-bold">Gallery</h2>
+          </div>
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="relative">
+              <Search
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                size={18}
+              />
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={`pl-10 pr-4 py-2 rounded-lg border w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-red-500 ${inputClass}`}
+              />
+            </div>
+            {/* TODO: do the category filtering */}
+            {/* <div
             className={`inline-flex p-1 rounded-lg overflow-x-auto ${
               isDarkMode ? "bg-slate-800" : "bg-stone-200"
             }`}
@@ -429,38 +434,39 @@ const Gallery = ({ isDarkMode, user }) => {
               </button>
             ))}
           </div> */}
+          </div>
         </div>
-      </div>
 
-      {loading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-pulse">
-          {[1, 2, 3, 4, 5, 6].map((n) => (
-            <div
-              key={n}
-              className={`h-90 rounded-xl ${
-                isDarkMode ? "bg-slate-800" : "bg-stone-200"
-              }`}
-            ></div>
-          ))}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((item) => (
-            <GalleryCard
-              key={item.id}
-              item={item}
-              user={user}
-              isDarkMode={isDarkMode}
-              handleEdit={handleEdit}
-              handleDelete={handleDelete}
-              cardBg={cardBg}
-              border={border}
-              textMain={textMain}
-            />
-          ))}
-        </div>
-      )}
-    </div>
+        {loading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-pulse">
+            {[1, 2, 3, 4, 5, 6].map((n) => (
+              <div
+                key={n}
+                className={`h-90 rounded-xl ${
+                  isDarkMode ? "bg-slate-800" : "bg-stone-200"
+                }`}
+              ></div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filtered.map((item) => (
+              <GalleryCard
+                key={item.id}
+                item={item}
+                user={user}
+                isDarkMode={isDarkMode}
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+                cardBg={cardBg}
+                border={border}
+                textMain={textMain}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
