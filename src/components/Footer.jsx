@@ -19,7 +19,7 @@ const Footer = ({ isDarkMode }) => {
     <footer className={`py-10 text-center border-t mt-20 ${footerClass}`}>
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className={textClass}>
-          © {year} Zsombor Pintér. Built with React & Firebase.
+          © {year} Zsombor Pintér
         </p>
         <div className="flex gap-6 text-sm font-medium">
           <a
@@ -27,12 +27,14 @@ const Footer = ({ isDarkMode }) => {
             target="_blank"
             rel="noreferrer"
             className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
+            aria-label="GitHub Link"
           >
             <Github size={14} /> GitHub
           </a>
           <a
             href="mailto:zsombor.pinter0105@gmail.com"
             className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
+            aria-label="Email Link"
           >
             <Mail size={14} /> Email
           </a>

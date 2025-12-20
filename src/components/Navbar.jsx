@@ -38,12 +38,17 @@ const Navbar = ({ isDarkMode, toggleTheme, user, setShowLoginModal }) => {
 
         <div className="flex items-center gap-6">
           <div className="hidden md:flex gap-6 font-medium text-sm">
-            <Link to="/" className={`transition-colors ${isActive("/")}`}>
+            <Link
+              to="/"
+              className={`transition-colors ${isActive("/")}`}
+              aria-label="Home Link"
+            >
               Home
             </Link>
             <Link
               to="/gallery"
               className={`transition-colors ${isActive("/gallery")}`}
+              aria-label="Gallery Link"
             >
               Gallery
             </Link>
@@ -53,6 +58,7 @@ const Navbar = ({ isDarkMode, toggleTheme, user, setShowLoginModal }) => {
               <button
                 onClick={() => signOut(auth)}
                 className={`${THEME.accent.text} text-sm font-bold flex items-center gap-1 mr-2`}
+                aria-label="Admin Logout"
               >
                 <LogOut size={16} />
               </button>
@@ -60,6 +66,7 @@ const Navbar = ({ isDarkMode, toggleTheme, user, setShowLoginModal }) => {
               <button
                 onClick={() => setShowLoginModal(true)}
                 className={`opacity-20 hover:opacity-100 transition-opacity mr-2 ${textClasses}`}
+                aria-label="Admin Login"
               >
                 <Lock size={16} />
               </button>
@@ -71,6 +78,7 @@ const Navbar = ({ isDarkMode, toggleTheme, user, setShowLoginModal }) => {
                   ? "hover:bg-slate-700 text-yellow-400"
                   : "hover:bg-stone-200 text-stone-600"
               }`}
+              aria-label="Toggle Theme"
             >
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>

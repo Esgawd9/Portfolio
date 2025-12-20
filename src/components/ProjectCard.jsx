@@ -64,6 +64,7 @@ const ProjectCard = ({ project, isDarkMode }) => {
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center gap-2 ${THEME.accent.text} font-bold hover:underline`}
+              aria-label="Launch Project"
             >
               Launch <ExternalLink size={16} />
             </a>
@@ -74,6 +75,7 @@ const ProjectCard = ({ project, isDarkMode }) => {
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center gap-2 ${THEME.accent.text} font-bold hover:underline`}
+              aria-label="View GitHub Repository"
             >
               GitHub <Github size={16} />
             </a>

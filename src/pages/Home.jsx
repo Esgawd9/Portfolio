@@ -3,7 +3,7 @@
 // DESCRIPTION: Home page component for the portfolio website.
 // ==========================================
 
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Mail,
@@ -107,7 +107,6 @@ const Home = ({ isDarkMode, openContact }) => {
       link: null,
       repo: "https://github.com/Esgawd9/Reflex-Game",
     },
-    
   ];
 
   return (
@@ -145,7 +144,11 @@ const Home = ({ isDarkMode, openContact }) => {
       }
     `}
             >
-              <Palette size={16} className={THEME.accent.text} />
+              <Palette
+                size={16}
+                className={THEME.accent.text}
+                aria-label="Art Gallery"
+              />
               Check out my Art
             </Link>
 
@@ -159,6 +162,7 @@ const Home = ({ isDarkMode, openContact }) => {
       ${border}
       ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
     `}
+              aria-label="GitHub"
             >
               <Github size={16} className={THEME.accent.text} />
               GitHub
@@ -173,6 +177,7 @@ const Home = ({ isDarkMode, openContact }) => {
       ${border}
       ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
     `}
+              aria-label="Download Resume"
             >
               <FileText size={18} />
               Download CV
@@ -183,6 +188,7 @@ const Home = ({ isDarkMode, openContact }) => {
             <button
               onClick={openContact}
               className={`cursor-pointer px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} transition-transform hover:-translate-y-1 inline-flex items-center`}
+              aria-label="Get in Touch"
             >
               <Mail size={16} className="mr-2" />
               Get in Touch
@@ -284,8 +290,8 @@ const Home = ({ isDarkMode, openContact }) => {
           </section>
         </div>
 
-        {/* FEATURED PROJECTS */}
-        <section id="projects">
+        {/* TODO: FEATURED PROJECTS */}
+        {/* <section id="projects">
           <div className="flex items-center gap-3 mb-8">
             <Code className={`w-6 h-6 ${THEME.accent.text}`} />
             <h2 className="text-3xl font-bold">Featured Projects</h2>
@@ -300,7 +306,7 @@ const Home = ({ isDarkMode, openContact }) => {
               />
             ))}
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );

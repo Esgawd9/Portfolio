@@ -155,6 +155,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
         <Link
           to="/gallery"
           className={`flex items-center gap-2 text-sm font-semibold mb-6 text-gray-500 ${THEME.accent.textHover} transition-colors`}
+          aria-label="Back to Gallery"
         >
           <ArrowLeft size={18} /> Back to Gallery
         </Link>

@@ -32,6 +32,7 @@ const GalleryControls = ({ searchQuery, setSearchQuery, isDarkMode }) => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className={inputClass}
+            aria-label="Gallery Searchbar"
           />
         </div>
       </div>
