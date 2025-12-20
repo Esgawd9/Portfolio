@@ -4,31 +4,33 @@ const SEO = ({ title, description, path }) => {
   const domain = "https://esgawd9-portfolio.vercel.app";
   const fullUrl = path ? `${domain}${path}` : domain;
   
-  // Open Graph image URL
-  const imageUrl = `${domain}/og-image.png`;
+  const themeColor = "#EF4444"; 
 
   return (
     <>
+      {/* --- STANDARD SEO --- */}
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={fullUrl} />
+      <meta name="author" content="Zsombor Pinter" />
 
-      {/* Open Graph (Facebook, LinkedIn) */}
+      {/* --- OPEN GRAPH (Facebook, LinkedIn, Discord) --- */}
+      {/* LinkedIn and Discord primarily use these tags */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Zsombor Pinter Portfolio" />
       
-      {/* og: image: */}
-      <meta property="og:image" content={imageUrl} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      {/* Note: og:image is in index.html for stability */}
 
-      {/* Twitter Card */}
+      {/* --- TWITTER CARD (X) --- */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={imageUrl} />
+
+      {/* --- DISCORD SPECIFIC --- */}
+      <meta name="theme-color" content={themeColor} />
     </>
   );
 };
