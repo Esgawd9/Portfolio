@@ -14,6 +14,8 @@ import {
   updateDoc,
   doc,
   serverTimestamp,
+  query,
+  orderBy,
 } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../config/firebase";
@@ -84,8 +86,17 @@ const Gallery = ({ isDarkMode, user }) => {
     ? "bg-blue-50 border-blue-200"
     : "bg-red-50 border-red-200";
 
+
+  // // FIREBASE: Fetch Origami Items with Real-time Updates
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, "origami"), (snapshot) => {
+    // Query
+    const q = query(
+      collection(db, "origami"),
+      orderBy("title", "asc")  // Order by
+    );
+
+    // Real-time listener
+    const unsubscribe = onSnapshot(q, (snapshot) => {
       setItems(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
       setLoading(false);
     });
