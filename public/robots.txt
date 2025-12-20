@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://https://esgawd9-portfolio.vercel.app/sitemap.x

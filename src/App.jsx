@@ -1,8 +1,3 @@
-// =========================================
-// FILE: App.jsx
-// DESCRIPTION: Main application component for the portfolio website.
-// =========================================
-
 import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -11,6 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+
 import { auth } from "./config/firebase";
 import { THEME } from "./config/theme";
 
@@ -89,6 +85,7 @@ const App = () => {
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   return (
+    // REMOVED: <HelmetProvider> wrapper
     <Router>
       <ScrollToTop />
       <div
@@ -141,11 +138,14 @@ const App = () => {
                 <button
                   type="button"
                   onClick={() => setShowLoginModal(false)}
-                  className={`cursor-pointer px-4 py-2 ${THEME.accent.bg} text-white rounded ${THEME.accent.bgHover}`}
+                  className="px-4 py-2 text-gray-500"
                 >
                   Cancel
                 </button>
-                <button type="submit" className="px-4 py-2 text-gray-500">
+                <button
+                  type="submit"
+                  className={`px-4 py-2 ${THEME.accent.bg} text-white rounded ${THEME.accent.bgHover}`}
+                >
                   Login
                 </button>
               </div>
