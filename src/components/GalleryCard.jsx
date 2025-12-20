@@ -24,7 +24,7 @@ const GalleryCard = ({
     >
       {/* --- ADMIN CONTROLS (Top Right) --- */}
       {user && (
-        <div className="absolute top-3 right-3 z-30 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute top-3 right-3 z-30 flex gap-2 lg:opacity-0 md:opacity-100 group-hover:opacity-100 transition-opacity duration-300">
           <button
             onClick={(e) => {
               e.preventDefault();
