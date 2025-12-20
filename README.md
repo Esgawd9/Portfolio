@@ -7,7 +7,7 @@
 
 A modern, responsive personal portfolio built to showcase creative work and technical projects.
 
-**[View Live Demo](https://esgawd9-portfolio.vercel.app)**
+**[View Live Demo](https://www.zsombor-pinter.site)**
 
 ---
 

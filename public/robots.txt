@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://https://esgawd9-portfolio.vercel.app/sitemap.x
+Sitemap: https://www.zsombor-pinter.site/sitemap.xml

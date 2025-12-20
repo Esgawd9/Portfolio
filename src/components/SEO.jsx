@@ -1,7 +1,7 @@
 import React from "react";
 
 const SEO = ({ title, description, path }) => {
-  const domain = "https://esgawd9-portfolio.vercel.app";
+  const domain = "https://www.zsombor-pinter.site/";
   const fullUrl = path ? `${domain}${path}` : domain;
   
   const themeColor = "#EF4444"; 

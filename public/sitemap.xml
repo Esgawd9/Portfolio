@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- 1. The Home Page -->
   <url>
-    <loc>https://esgawd9-portfolio.vercel.app/</loc>
+    <loc>https://www.zsombor-pinter.site</loc>
     <lastmod>2025-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -10,7 +10,7 @@
   
   <!-- 2. The Gallery Page -->
   <url>
-    <loc>https://esgawd9-portfolio.vercel.app/gallery</loc>
+    <loc>https://www.zsombor-pinter.site/gallery</loc>
     <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
