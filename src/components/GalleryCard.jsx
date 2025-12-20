@@ -8,13 +8,7 @@ import { Link } from "react-router-dom";
 import { Pencil, Trash2, Loader2 } from "lucide-react";
 import { THEME } from "../config/theme";
 
-const GalleryCard = ({
-  item,
-  user,
-  isDarkMode,
-  handleEdit,
-  handleDelete,
-}) => {
+const GalleryCard = ({ item, user, isDarkMode, handleEdit, handleDelete }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
@@ -47,8 +41,11 @@ const GalleryCard = ({
       )}
 
       {/* --- IMAGE CONTAINER --- */}
-      <div className={`w-full h-full relative ${isDarkMode ? "bg-slate-800" : "bg-gray-200"}`}>
-        
+      <div
+        className={`w-full h-full relative ${
+          isDarkMode ? "bg-slate-800" : "bg-gray-200"
+        }`}
+      >
         {/* Loading Spinner */}
         {!isImageLoaded && (
           <div className="absolute inset-0 flex items-center justify-center z-10">
@@ -71,15 +68,15 @@ const GalleryCard = ({
 
         {/* --- CONTENT --- */}
         <div className="absolute bottom-0 left-0 w-full p-6 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-            {/* Badge */}
-            <span className="inline-block px-2 py-1 mb-2 text-[10px] font-bold text-white bg-black/20 backdrop-blur-md rounded">
-                {item.difficulty}
-            </span>
-            
-            {/* Title */}
-            <h3 className="text-xl font-bold text-amber-50 leading-tight drop-shadow-md">
-                {item.title}
-            </h3>
+          {/* Badge */}
+          <span className="inline-block px-2 py-1 mb-2 text-[10px] font-bold text-white bg-black/20 backdrop-blur-md rounded">
+            {item.difficulty}
+          </span>
+
+          {/* Title */}
+          <h3 className="text-xl font-bold text-amber-50 leading-tight drop-shadow-md">
+            {item.title}
+          </h3>
         </div>
       </div>
     </Link>

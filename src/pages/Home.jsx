@@ -114,7 +114,7 @@ const Home = ({ isDarkMode, openContact }) => {
     <>
       <SEO
         title="Zsombor Pinter | Portfolio"
-        description="Welcome to the portfolio of Zsombor Pinter, a Software Engineer specializing in web development and software engineering."
+        description="I'm Zsombor Pintér, a software engineering student from Hungary. Check out my coding projects and art gallery here!"
         path="/"
       />
 
@@ -122,7 +122,7 @@ const Home = ({ isDarkMode, openContact }) => {
         {/* HERO SECTION */}
         <header className="text-center py-12">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-            Zsombor <span className={THEME.accent.text}>Pinter</span>
+            Zsombor <span className={THEME.accent.text}>Pintér</span>
           </h1>
 
           <p
