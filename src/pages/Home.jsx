@@ -16,6 +16,8 @@ import {
   Hash,
   Cpu,
   Palette,
+  Gamepad2,
+  
 } from "lucide-react";
 import { THEME } from "../config/theme";
 import ProjectCard from "../components/ProjectCard";
@@ -99,7 +101,7 @@ const Home = ({ isDarkMode, openContact }) => {
       subtitle: "Mobile App",
       description:
         "A simple reflex game developed in Java/Gradle using Firebase for backend services. Players can test their reaction times and compete on leaderboards.",
-      icon: Cpu,
+      icon: Gamepad2,
       tags: ["App", "Android", "Game", "Firebase"],
       link: null, // No live link for this one
       repo: "https://github.com/Esgawd9/Reflex-Game",
@@ -113,7 +115,7 @@ const Home = ({ isDarkMode, openContact }) => {
       icon: Cpu,
       tags: ["Game", "Typescript", "Socket.io", "React", "Supabase", "Node.js", "Vercel", "Tailwind CSS"],
       link: "https://esgawd9-chain-reaction.vercel.app", 
-      repo: "https://github.com/Esgawd9",
+      repo: "https://github.com/Esgawd9/chain-reaction",
     },
   ];
 
@@ -131,7 +133,7 @@ const Home = ({ isDarkMode, openContact }) => {
 
         {/* Contact Links */}
         <div
-          className="flex flex-col items-center justify-center gap-4 mb-10 text-sm sm:flex-row sm:flex-wrap" // <--- Added 'items-center' here
+          className="flex flex-col items-center justify-center gap-4 mb-10 text-sm sm:flex-row sm:flex-wrap"
         >
           {/* Gallery */}
           <Link
@@ -279,7 +281,6 @@ const Home = ({ isDarkMode, openContact }) => {
       </div>
 
       {/* FEATURED PROJECTS */}
-      {/* TODO: get some projects to showcase */}
       <section id="projects">
         <div className="flex items-center gap-3 mb-8">
           <Code className={`w-6 h-6 ${THEME.accent.text}`} />
