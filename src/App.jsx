@@ -85,7 +85,6 @@ const App = () => {
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   return (
-    // REMOVED: <HelmetProvider> wrapper
     <Router>
       <ScrollToTop />
       <div

@@ -104,28 +104,10 @@ const Home = ({ isDarkMode, openContact }) => {
         "A simple reflex game developed in Java/Gradle using Firebase for backend services. Players can test their reaction times and compete on leaderboards.",
       icon: Gamepad2,
       tags: ["App", "Android", "Game", "Firebase"],
-      link: null, // No live link for this one
+      link: null,
       repo: "https://github.com/Esgawd9/Reflex-Game",
     },
-    {
-      id: 2,
-      title: "Chain Reaction (WIP)",
-      subtitle: "Multiplayer board game",
-      description: "",
-      icon: Cpu,
-      tags: [
-        "Game",
-        "Typescript",
-        "Socket.io",
-        "React",
-        "Supabase",
-        "Node.js",
-        "Vercel",
-        "Tailwind CSS",
-      ],
-      link: "https://esgawd9-chain-reaction.vercel.app",
-      repo: "https://github.com/Esgawd9/chain-reaction",
-    },
+    
   ];
 
   return (
