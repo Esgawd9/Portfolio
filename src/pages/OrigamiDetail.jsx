@@ -28,9 +28,10 @@ const OrigamiDetail = ({ isDarkMode }) => {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const skeletonClass = `rounded-xl ${
+  const skeletonClass = `rounded-xl ${    
     isDarkMode ? "bg-slate-800" : "bg-stone-200"
   }`;
+  const bgSecondary = isDarkMode ? "bg-slate-700" : "bg-stone-100";
 
   // Theme shortcuts
   const textSub = isDarkMode ? THEME.dark.textSub : THEME.light.textSub;
@@ -205,7 +206,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
                     <p className="text-xs text-gray-500 uppercase font-bold">
                       Difficulty
                     </p>
-                    <span className="inline-block px-2 py-0.5 rounded text-xs font-bold mt-1 bg-gray-100 text-gray-800">
+                    <span className={`inline-block px-2 py-0.5 rounded text-xs font-bold mt-1 ${bgSecondary} ${textSub}`}>
                       {item.difficulty}
                     </span>
                   </div>

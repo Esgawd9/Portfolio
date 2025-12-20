@@ -8,7 +8,7 @@ import { ExternalLink, Github } from "lucide-react";
 import { THEME } from "../config/theme";
 
 const ProjectCard = ({ project, isDarkMode }) => {
-  // Theme shortcuts to keep JSX clean
+  // Theme shortcuts
   const cardBg = isDarkMode ? THEME.dark.card : THEME.light.card;
   const border = isDarkMode ? THEME.dark.border : THEME.light.border;
   const bgSecondary = isDarkMode ? "bg-slate-700" : "bg-stone-100";
