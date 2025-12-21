@@ -132,7 +132,7 @@ const Home = ({ isDarkMode, openContact }) => {
   return (
     <>
       <SEO
-        title="Zsombor Pinter | Portfolio"
+        title="Zsombor Pintér | Portfolio"
         description="I'm Zsombor Pintér, a software engineering student from Hungary. Check out my coding projects and art gallery here!"
         path="/"
       />

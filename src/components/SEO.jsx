@@ -12,7 +12,7 @@ const SEO = ({ title, description, path }) => {
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={fullUrl} />
-      <meta name="author" content="Zsombor Pinter" />
+      <meta name="author" content="Zsombor Pintér" />
 
       {/* --- OPEN GRAPH (Facebook, LinkedIn, Discord) --- */}
       {/* LinkedIn and Discord primarily use these tags */}
@@ -20,7 +20,7 @@ const SEO = ({ title, description, path }) => {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Zsombor Pinter Portfolio" />
+      <meta property="og:site_name" content="Zsombor Pintér Portfolio" />
       
       {/* Note: og:image is in index.html for stability */}
 
