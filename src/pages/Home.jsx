@@ -94,6 +94,26 @@ const Home = ({ isDarkMode, openContact }) => {
     },
   ];
 
+  //  --- SCHEMA.ORG: HOME ---
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Zsombor Pintér",
+    url: "https://www.zsombor-pinter.site",
+    image: "https://www.zsombor-pinter.site/og-image.png",
+    sameAs: [
+      "https://github.com/Esgawd9",
+      "https://www.linkedin.com/in/zsombor-pinter",
+    ],
+    jobTitle: "Software Engineering Student",
+    worksFor: {
+      "@type": "Organization",
+      name: "University of Szeged",
+    },
+    description: "Aspiring Software Engineer and Origami Artist from Hungary",
+    knowsAbout: SKILLS.map((skill) => skill.name),
+  };
+
   // Projects
   const PROJECTS = [
     {
@@ -116,6 +136,9 @@ const Home = ({ isDarkMode, openContact }) => {
         description="I'm Zsombor Pintér, a software engineering student from Hungary. Check out my coding projects and art gallery here!"
         path="/"
       />
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
 
       <div className="space-y-24 animate-in slide-in-from-left-4 duration-500">
         {/* HERO SECTION */}

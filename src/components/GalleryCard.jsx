@@ -55,7 +55,7 @@ const GalleryCard = ({ item, user, isDarkMode, handleEdit, handleDelete }) => {
 
         <img
           src={item.image}
-          alt={item.title}
+          alt={item.title + " origami model origami model folded by Zsombor Pintér"}
           loading="lazy"
           onLoad={() => setIsImageLoaded(true)}
           className={`w-full h-full object-cover ${

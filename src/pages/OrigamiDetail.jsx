@@ -53,7 +53,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
       <>
         <SEO
           title="Gallery"
-          description="Folded by Zsombor Pinter"
+          description="Folded by Zsombor Pintér"
           path={`/gallery/${id}`}
         />
 
@@ -128,7 +128,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
     <>
       <SEO
         title={`Gallery | ${item.title}`}
-        description={`Folded by Zsombor Pinter: ${item.title}`}
+        description={`Folded by Zsombor Pintér: ${item.title}`}
         path={`/gallery/${id}`}
       />
 

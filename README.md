@@ -1,4 +1,4 @@
-# Zsombor Pinter - Portfolio
+# Zsombor Pintér - Portfolio
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)

@@ -35,13 +35,46 @@ const Gallery = ({ isDarkMode, user }) => {
     deleteItem(id);
   };
 
+  // --- SCHEMA.ORG: IMAGE GALLERY ---
+  const gallerySchema = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    name: "Zsombor Pintér's Origami Gallery",
+    description: "A collection of hand-folded origami models.",
+    url: "https://www.zsombor-pinter.site/gallery",
+    creator: {
+      "@type": "Person",
+      name: "Zsombor Pintér",
+    },
+    // ImageObjects
+    hasPart: items
+      .filter((item) => item.image)
+      .map((item) => ({
+        "@type": "ImageObject",
+        contentUrl: item.image, // image's link
+        thumbnailUrl: item.image,
+        name: item.title,
+        description: `Origami model of ${item.title}`,
+        creator: {
+          "@type": "Person",
+          name: item.artist || "Unknown Artist",
+        },
+      })),
+  };
+
   return (
     <>
       <SEO
-        title="Zsombor Pinter | Gallery"
-        description="Browse a collection of origami models. Folded by Zsombor Pinter."
+        title="Zsombor Pintér | Gallery"
+        description="Browse a collection of origami models. Folded by Zsombor Pintér."
         path="/gallery"
       />
+
+      {!loading && (
+        <script type="application/ld+json">
+          {JSON.stringify(gallerySchema)}
+        </script>
+      )}
 
       <div className="animate-in slide-in-from-right-4 duration-500">
         {/* Admin Section */}
