@@ -46,8 +46,8 @@ const App = () => {
       return true;
     }
 
-    // 3. Default to light mode
-    return false;
+    // 3. Default to dark mode
+    return true;
   });
 
   const [showContactModal, setShowContactModal] = useState(false);

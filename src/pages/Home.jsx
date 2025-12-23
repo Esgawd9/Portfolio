@@ -17,6 +17,7 @@ import {
   Cpu,
   Palette,
   Gamepad2,
+  Linkedin,
 } from "lucide-react";
 
 // Theme configuration
@@ -159,7 +160,7 @@ const Home = ({ isDarkMode, openContact }) => {
             <Link
               to="/gallery"
               className={`
-      cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors
+      cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-full border
       ${
         isDarkMode
           ? "border-slate-700 hover:bg-slate-800"
@@ -172,7 +173,7 @@ const Home = ({ isDarkMode, openContact }) => {
                 className={THEME.accent.text}
                 aria-label="Art Gallery"
               />
-              Check out my Art
+              Gallery
             </Link>
 
             {/* GitHub */}
@@ -181,7 +182,7 @@ const Home = ({ isDarkMode, openContact }) => {
               target="_blank"
               rel="noreferrer"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border
       ${border}
       ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
     `}
@@ -191,12 +192,27 @@ const Home = ({ isDarkMode, openContact }) => {
               GitHub
             </a>
 
+            <a
+              href="https://www.linkedin.com/in/zsombor-pinter"
+              target="_blank"
+              rel="noreferrer"
+              className={`
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border
+      ${border}
+      ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
+    `}
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={16} className={THEME.accent.text} />
+              LinkedIn
+            </a>
+
             {/* Resume */}
             <a
               href="/resume.pdf"
               download="Zsombor_Pinter_Resume.pdf"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border
       ${border}
       ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
     `}
@@ -258,21 +274,31 @@ const Home = ({ isDarkMode, openContact }) => {
                 </span>
               </div>
               <ul
-                className={`list-disc list-inside space-y-3 text-sm leading-relaxed ${textSub}`}
+                className={`list-disc list-inside list-none space-y-3 text-sm leading-relaxed  ${textSub}`}
               >
                 <li>
-                  Developed and maintained frontend features for a
-                  PlatformOS-hosted website using HTML, CSS, JavaScript, and
-                  Liquid.
+                  <strong>Frontend Development:</strong> Developed and
+                  maintained responsive UI components (Hero sections, Card
+                  systems, Navigation) for PlatformOS-hosted marketing sites
+                  using Liquid, JavaScript, and Tailwind CSS.
                 </li>
                 <li>
-                  Collaborated in an agile team, ensuring seamless integration
-                  of frontend components.
+                  <strong>Performance Optimization:</strong> Conducted
+                  comprehensive Lighthouse and PageSpeed audits to optimize Core
+                  Web Vitals. Implemented 301 redirects and resolved indexing
+                  issues to enhance SEO.
                 </li>
                 <li>
-                  Debugged and optimized code to improve website performance.
+                  <strong>UI/UX & Accessibility:</strong> Collaborated with
+                  designers to implement Dark Mode functionality and ensured web
+                  accessibility compliance across multiple solution pages.
                 </li>
-                <li>Assisted in version control workflows using Git.</li>
+                <li>
+                  <strong>Agile Collaboration:</strong> Actively participated in
+                  agile team workflows, managing tickets and utilizing
+                  Git/GitHub for version control, code reviews (PRs), and
+                  release management.
+                </li>
               </ul>
             </div>
           </section>
@@ -293,21 +319,19 @@ const Home = ({ isDarkMode, openContact }) => {
                     2022 - Present
                   </span>
                 </div>
-                <p className={`${THEME.accent.text} font-medium`}>
-                  University of Szeged
-                </p>
-                <p className={`text-sm mt-2 ${textSub}`}>
-                  Faculty of Science and Informatics
-                </p>
+                <p className={`mt-2 ${textSub}`}>University of Szeged</p>
               </div>
-              <div
-                className={`p-6 rounded-2xl border opacity-60 ${cardBg} ${border}`}
-              >
+
+              <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-lg font-bold">High School Diploma</h3>
-                  <span className="text-sm shrink-0 ml-4">2017 - 2021</span>
+                  <h3 className="text-xl font-bold">High School Diploma</h3>
+                  <span className="text-sm opacity-60 shrink-0 ml-4">
+                    2017 - 2021
+                  </span>
                 </div>
-                <p>Dombóvári Illyés Gyula Gimnázium</p>
+                <p className={`mt-2 ${textSub}`}>
+                  Dombóvári Illyés Gyula Gimnázium
+                </p>
               </div>
             </div>
           </section>
