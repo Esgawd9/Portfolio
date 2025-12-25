@@ -293,7 +293,7 @@ const Home = ({ isDarkMode, openContact }) => {
           </div>
           <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
             <p className={`text-lg leading-relaxed ${THEME.text}`}>
-              I'm a Software Engineering student at the strong University of Szeged,
+              I'm a Software Engineering student at the University of Szeged,
               Hungary. Specializing in full-stack development. I focus on
               creating clean, responsive applications that prioritize user
               experience and minimalistic design. Beyond coding, I'm passionate
