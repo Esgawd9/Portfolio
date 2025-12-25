@@ -4,7 +4,7 @@
 // =========================================
 
 import React from "react";
-import { Github, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { THEME } from "../config/theme";
 
 // ==========================================
@@ -30,6 +30,15 @@ const Footer = ({ isDarkMode }) => {
             aria-label="GitHub Link"
           >
             <Github size={14} /> GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/zsombor-pinter"
+            target="_blank"
+            rel="noreferrer"
+            className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
+            aria-label="Email Link"
+          >
+            <Linkedin size={14} /> Email
           </a>
           <a
             href="mailto:zsombor.pinter0105@gmail.com"

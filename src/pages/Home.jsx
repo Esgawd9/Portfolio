@@ -18,6 +18,7 @@ import {
   Palette,
   Gamepad2,
   Linkedin,
+  User,
 } from "lucide-react";
 
 // Theme configuration
@@ -30,7 +31,10 @@ import SEO from "../components/SEO";
 import ProjectCard from "../components/ProjectCard";
 import SkillCard from "../components/SkillCard";
 import ContactModal from "../components/ContactModal";
+import ExperienceCard from "../components/ExperienceCard";
+import EducationCard from "../components/EducationCard";
 
+// Icons
 import {
   FaPython,
   FaJava,
@@ -55,6 +59,58 @@ const Home = ({ isDarkMode, openContact }) => {
   const textSub = isDarkMode ? THEME.dark.textSub : THEME.light.textSub;
   const cardBg = isDarkMode ? THEME.dark.card : THEME.light.card;
   const border = isDarkMode ? THEME.dark.border : THEME.light.border;
+
+  const EXPERIENCES = [
+    // {
+    //   title: "Intern - Full-stack Developer",
+    //   company: "IT NET SOLUTION LTD",
+    //   period: "2026 Jan - Present",
+    //   points: [
+    //     {
+    //       label: "Full-stack Development",
+    //       text: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     },
+    //   ],
+    // },
+    {
+      title: "Intern - Web Developer",
+      company: "origin/develop Kft.",
+      period: "2025 (3 months)",
+      points: [
+        {
+          label: "Frontend Development",
+          text: "Developed and maintained responsive UI components using Liquid, JavaScript, and Tailwind CSS.",
+        },
+        {
+          label: "Performance Optimization",
+          text: "Optimized Core Web Vitals via Lighthouse audits, SEO fixes, and 301 redirects.",
+        },
+        {
+          label: "UI/UX & Accessibility",
+          text: "Implemented Dark Mode and ensured WCAG-compliant accessibility.",
+        },
+        {
+          label: "Agile Collaboration",
+          text: "Worked in agile workflows using Git/GitHub, PRs, and release management.",
+        },
+      ],
+    },
+    
+
+  ];
+
+  const EDUCATION = [
+    {
+      degree: "Software Engineering BSc",
+      institution: "University of Szeged",
+      period: "2022 – Present",
+    },
+    {
+      degree: "High School Diploma",
+      institution: "Dombóvári Illyés Gyula Gimnázium",
+      period: "2017 – 2021",
+    },
+  ];
 
   // Skills
   const SKILLS = [
@@ -143,7 +199,7 @@ const Home = ({ isDarkMode, openContact }) => {
 
       <div className="space-y-24 animate-in slide-in-from-left-4 duration-500">
         {/* HERO SECTION */}
-        <header className="text-center py-12">
+        <header className="text-center pt-12">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
             Zsombor <span className={THEME.accent.text}>Pintér</span>
           </h1>
@@ -151,31 +207,11 @@ const Home = ({ isDarkMode, openContact }) => {
           <p
             className={`text-xl md:text-2xl mb-8 max-w-2xl mx-auto ${textSub}`}
           >
-            Software Engineer
+            Software Engineer | Fullstack Developer | Origami Artist
           </p>
 
           {/* Contact Links */}
           <div className="flex flex-col items-center justify-center gap-4 mb-10 text-sm sm:flex-row sm:flex-wrap">
-            {/* Gallery */}
-            <Link
-              to="/gallery"
-              className={`
-      cursor-pointer inline-flex items-center gap-2 px-4 py-2 rounded-full border
-      ${
-        isDarkMode
-          ? "border-slate-700 hover:bg-slate-800"
-          : "border-stone-200 hover:bg-stone-100"
-      }
-    `}
-            >
-              <Palette
-                size={16}
-                className={THEME.accent.text}
-                aria-label="Art Gallery"
-              />
-              Gallery
-            </Link>
-
             {/* GitHub */}
             <a
               href="https://github.com/Esgawd9"
@@ -207,6 +243,20 @@ const Home = ({ isDarkMode, openContact }) => {
               LinkedIn
             </a>
 
+            {/* Gallery */}
+            <Link
+              to="/gallery"
+              className={`
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border
+      ${border}
+      ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
+    `}
+              aria-label="Art Gallery"
+            >
+              <Palette size={16} className={THEME.accent.text} />
+              Gallery
+            </Link>
+
             {/* Resume */}
             <a
               href="/resume.pdf"
@@ -226,7 +276,7 @@ const Home = ({ isDarkMode, openContact }) => {
           <div className="flex flex-wrap justify-center gap-4">
             <button
               onClick={openContact}
-              className={`cursor-pointer px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} transition-transform hover:-translate-y-1 inline-flex items-center`}
+              className={`cursor-pointer px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} inline-flex items-center`}
               aria-label="Get in Touch"
             >
               <Mail size={16} className="mr-2" />
@@ -234,6 +284,24 @@ const Home = ({ isDarkMode, openContact }) => {
             </button>
           </div>
         </header>
+
+        {/* ABOUT ME */}
+        <section>
+          <div className="flex items-center gap-3 mb-6 justify-center md:justify-start">
+            <User className={`w-6 h-6 ${THEME.accent.text}`} />
+            <h2 className="text-3xl font-bold">About Me</h2>
+          </div>
+          <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
+            <p className={`text-lg leading-relaxed ${THEME.text}`}>
+              I'm a Software Engineering student at the strong University of Szeged,
+              Hungary. Specializing in full-stack development. I focus on
+              creating clean, responsive applications that prioritize user
+              experience and minimalistic design. Beyond coding, I'm passionate
+              about origami art, which allows me to explore creativity and
+              precision in a different medium.
+            </p>
+          </div>
+        </section>
 
         {/* SKILLS */}
         <section>
@@ -255,51 +323,21 @@ const Home = ({ isDarkMode, openContact }) => {
 
         {/* EXPERIENCE & EDUCATION */}
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Experience */}
           <section>
             <div className="flex items-center gap-3 mb-8">
               <Briefcase className={`w-6 h-6 ${THEME.accent.text}`} />
               <h2 className="text-3xl font-bold">Experience</h2>
             </div>
-            <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-bold">Intern - Web Developer</h3>
-                  <p className={`${THEME.accent.text} font-bold`}>
-                    origin/develop Kft.
-                  </p>
-                </div>
-                <span className="text-sm opacity-60 shrink-0 ml-4">
-                  2025 (3 months)
-                </span>
-              </div>
-              <ul
-                className={`list-disc list-inside list-none space-y-3 text-sm leading-relaxed  ${textSub}`}
-              >
-                <li>
-                  <strong>Frontend Development:</strong> Developed and
-                  maintained responsive UI components (Hero sections, Card
-                  systems, Navigation) for PlatformOS-hosted marketing sites
-                  using Liquid, JavaScript, and Tailwind CSS.
-                </li>
-                <li>
-                  <strong>Performance Optimization:</strong> Conducted
-                  comprehensive Lighthouse and PageSpeed audits to optimize Core
-                  Web Vitals. Implemented 301 redirects and resolved indexing
-                  issues to enhance SEO.
-                </li>
-                <li>
-                  <strong>UI/UX & Accessibility:</strong> Collaborated with
-                  designers to implement Dark Mode functionality and ensured web
-                  accessibility compliance across multiple solution pages.
-                </li>
-                <li>
-                  <strong>Agile Collaboration:</strong> Actively participated in
-                  agile team workflows, managing tickets and utilizing
-                  Git/GitHub for version control, code reviews (PRs), and
-                  release management.
-                </li>
-              </ul>
+
+            <div className="space-y-6">
+              {EXPERIENCES.map((exp, index) => (
+                <ExperienceCard
+                  key={index}
+                  experience={exp}
+                  isDarkMode={isDarkMode}
+                  theme={THEME}
+                />
+              ))}
             </div>
           </section>
 
@@ -309,30 +347,16 @@ const Home = ({ isDarkMode, openContact }) => {
               <GraduationCap className={`w-6 h-6 ${THEME.accent.text}`} />
               <h2 className="text-3xl font-bold">Education</h2>
             </div>
-            <div className="space-y-6">
-              <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold">
-                    Software Engineering BSc
-                  </h3>
-                  <span className="text-sm opacity-60 shrink-0 ml-4">
-                    2022 - Present
-                  </span>
-                </div>
-                <p className={`mt-2 ${textSub}`}>University of Szeged</p>
-              </div>
 
-              <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-xl font-bold">High School Diploma</h3>
-                  <span className="text-sm opacity-60 shrink-0 ml-4">
-                    2017 - 2021
-                  </span>
-                </div>
-                <p className={`mt-2 ${textSub}`}>
-                  Dombóvári Illyés Gyula Gimnázium
-                </p>
-              </div>
+            <div className="space-y-6">
+              {EDUCATION.map((edu, index) => (
+                <EducationCard
+                  key={index}
+                  education={edu}
+                  isDarkMode={isDarkMode}
+                  theme={THEME}
+                />
+              ))}
             </div>
           </section>
         </div>
