@@ -197,7 +197,7 @@ const Home = ({ isDarkMode, openContact }) => {
         {JSON.stringify(structuredData)}
       </script>
 
-      <div className="space-y-24 animate-in slide-in-from-left-4 duration-500">
+      <div className="space-y-24">
         {/* HERO SECTION */}
         <header className="text-center pt-12">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
@@ -218,7 +218,7 @@ const Home = ({ isDarkMode, openContact }) => {
               target="_blank"
               rel="noreferrer"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
       ${border}
       ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
     `}
@@ -233,7 +233,7 @@ const Home = ({ isDarkMode, openContact }) => {
               target="_blank"
               rel="noreferrer"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
       ${border}
       ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
     `}
@@ -247,7 +247,7 @@ const Home = ({ isDarkMode, openContact }) => {
             <Link
               to="/gallery"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
       ${border}
       ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
     `}
@@ -262,7 +262,7 @@ const Home = ({ isDarkMode, openContact }) => {
               href="/resume.pdf"
               download="Zsombor_Pinter_Resume.pdf"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
       ${border}
       ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
     `}
@@ -276,7 +276,7 @@ const Home = ({ isDarkMode, openContact }) => {
           <div className="flex flex-wrap justify-center gap-4">
             <button
               onClick={openContact}
-              className={`cursor-pointer px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} inline-flex items-center`}
+              className={`cursor-pointer px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} inline-flex items-center transition-transform hover:scale-110 duration-200`}
               aria-label="Get in Touch"
             >
               <Mail size={16} className="mr-2" />

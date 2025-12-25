@@ -14,7 +14,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 
-import emailjs from "@emailjs/browser"; 
+import emailjs from "@emailjs/browser";
 
 import { THEME } from "../config/theme";
 
@@ -54,7 +54,6 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
     e.preventDefault();
     setStatus("sending");
 
-    
     emailjs
       .send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -78,7 +77,6 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
         console.error("Failed:", error);
         setStatus("error");
       });
-    
   };
 
   return (
@@ -101,9 +99,6 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
               <X size={20} />
             </button>
           </div>
-          <p className={`mt-1 text-sm ${themeMode.textSub}`}>
-            If you would like to contact me please fill out the form below.
-          </p>
         </div>
 
         {/* Body */}
@@ -190,7 +185,7 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className={`cursor-pointer w-full py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 text-white transition-all transform active:scale-95 ${
+                className={`cursor-pointer w-full py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 text-white ${
                   status === "sending"
                     ? "bg-gray-400 cursor-not-allowed"
                     : `${THEME.accent.bg} ${THEME.accent.bgHover}`

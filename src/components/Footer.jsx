@@ -36,9 +36,9 @@ const Footer = ({ isDarkMode }) => {
             target="_blank"
             rel="noreferrer"
             className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
-            aria-label="Email Link"
+            aria-label="LinkedIn Link"
           >
-            <Linkedin size={14} /> Email
+            <Linkedin size={14} /> LinkedIn
           </a>
           <a
             href="mailto:zsombor.pinter0105@gmail.com"

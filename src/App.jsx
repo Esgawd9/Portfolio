@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 
 import { auth } from "./config/firebase";
@@ -20,15 +15,6 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import OrigamiDetail from "./pages/OrigamiDetail";
 import NotFound from "./pages/NotFound";
-
-// Helper
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
 
 const App = () => {
   // Initialize state by checking Local Storage first, then System Preference
@@ -86,7 +72,6 @@ const App = () => {
 
   return (
     <Router>
-      <ScrollToTop />
       <div
         className={`min-h-screen flex flex-col transition-colors duration-300 ${
           isDarkMode

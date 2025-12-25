@@ -30,6 +30,7 @@ const Navbar = ({ isDarkMode, toggleTheme, user, setShowLoginModal }) => {
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link
           to="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition-opacity"
         >
           <img src="/origami_bird.svg" alt="Origami Bird" className="w-6 h-6" />
@@ -40,14 +41,16 @@ const Navbar = ({ isDarkMode, toggleTheme, user, setShowLoginModal }) => {
           <div className="hidden md:flex gap-6 font-medium text-sm">
             <Link
               to="/"
-              className={`transition-colors ${isActive("/")}`}
+              className={`${isActive("/")}`}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               aria-label="Home Link"
             >
               Home
             </Link>
             <Link
               to="/gallery"
-              className={`transition-colors ${isActive("/gallery")}`}
+              className={`${isActive("/gallery")}`}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               aria-label="Gallery Link"
             >
               Gallery

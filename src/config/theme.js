@@ -5,10 +5,10 @@
 
 export const THEME = {
   accent: {
-    text: "text-red-500",
+    text: "text-red-600",
     textHover: "hover:text-red-500",
-    bg: "bg-red-500",
-    bgHover: "hover:bg-red-600",
+    bg: "bg-red-600",
+    bgHover: "hover:bg-red-500",
     border: "border-red-300",
     lightBg: "bg-red-100",
     lightText: "text-red-600",
@@ -34,15 +34,15 @@ export const THEME = {
     footer: "bg-black border-slate-800",
   },
   light: {
-    bg: "bg-stone-50",
+    bg: "bg-stone-200",
     nav: "bg-white/80",
-    text: "text-stone-800",
-    textSub: "text-stone-600",
+    text: "text-stone-900",
+    textSub: "text-stone-700",
     card: "bg-white",
-    border: "border-stone-200",
+    border: "border-stone-300",
     input: "bg-white",
     inputBorder: "border-stone-300",
-    inputText: "text-black",
+    inputText: "text-stone-900",
     footer: "bg-stone-100 border-stone-200",
   },
 };
