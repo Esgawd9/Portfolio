@@ -33,14 +33,14 @@ const SkillCard = ({ skill, isDarkMode }) => {
       >
         {/* FRONT SIDE (Text) */}
         <div
-          className={`absolute inset-0 backface-hidden flex items-center justify-center rounded-xl border font-bold text-lg shadow-sm ${cardBg} ${border}`}
+          className={`absolute inset-0 backface-hidden flex items-center justify-center rounded-xl border font-bold text-lg ${cardBg} ${border}`}
         >
           {skill.name}
         </div>
 
         {/* BACK SIDE (Icon & Color) */}
         <div
-          className={`absolute inset-0 backface-hidden rotate-y-180 flex items-center justify-center rounded-xl ${skill.color} ${skill.text} shadow-lg`}
+          className={`absolute inset-0 backface-hidden rotate-y-180 flex items-center justify-center rounded-xl ${skill.color} ${skill.text}`}
         >
           <skill.icon size={48} />
         </div>

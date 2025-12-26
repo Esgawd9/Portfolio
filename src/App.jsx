@@ -32,8 +32,8 @@ const App = () => {
       return true;
     }
 
-    // 3. Default to dark mode
-    return true;
+    // 3. Default to light mode
+    return false;
   });
 
   const [showContactModal, setShowContactModal] = useState(false);
@@ -137,7 +137,9 @@ const App = () => {
           </div>
         )}
 
-        <main className="max-w-6xl mx-auto px-4 py-12 grow w-full">
+        <main className={`max-w-6xl mx-auto px-4 py-12 mt-12 grow w-full ${isDarkMode
+            ? `dark ${THEME.dark.main}`
+            : `${THEME.light.main}`} rounded-lg shadow-lg`}>
           <Routes>
             <Route
               path="/"

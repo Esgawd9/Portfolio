@@ -199,7 +199,7 @@ const Home = ({ isDarkMode, openContact }) => {
 
       <div className="space-y-24">
         {/* HERO SECTION */}
-        <header className="text-center pt-12">
+        <header className={`text-center pt-16 pb-16 rounded-lg ${cardBg} ${border} border-1 px-4`}>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
             Zsombor <span className={THEME.accent.text}>Pintér</span>
           </h1>
@@ -207,7 +207,7 @@ const Home = ({ isDarkMode, openContact }) => {
           <p
             className={`text-xl md:text-2xl mb-8 max-w-2xl mx-auto ${textSub}`}
           >
-            Software Engineer | Fullstack Developer | Origami Artist
+            Software Engineer | Full-stack Developer | Origami Artist
           </p>
 
           {/* Contact Links */}
@@ -219,8 +219,7 @@ const Home = ({ isDarkMode, openContact }) => {
               rel="noreferrer"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${border}
-      ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
+      ${isDarkMode ? "hover:bg-slate-700 bg-slate-900 border-slate-700" : "hover:bg-[#f6f5f1] bg-[#eae8de] border-stone-300"} "}]"}
     `}
               aria-label="GitHub"
             >
@@ -234,8 +233,7 @@ const Home = ({ isDarkMode, openContact }) => {
               rel="noreferrer"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${border}
-      ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
+      ${isDarkMode ? "hover:bg-slate-700 bg-slate-900 border-slate-700" : "hover:bg-[#f6f5f1] bg-[#eae8de] border-stone-300"} "}]"}
     `}
               aria-label="LinkedIn"
             >
@@ -243,13 +241,12 @@ const Home = ({ isDarkMode, openContact }) => {
               LinkedIn
             </a>
 
-            {/* Gallery */}
+            {/* Gallery TODO: theme variables */}
             <Link
               to="/gallery"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${border}
-      ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
+      ${isDarkMode ? "hover:bg-slate-700 bg-slate-900 border-slate-700" : "hover:bg-[#f6f5f1] bg-[#eae8de] border-stone-300"} "}]"}
     `}
               aria-label="Art Gallery"
             >
@@ -263,8 +260,7 @@ const Home = ({ isDarkMode, openContact }) => {
               download="Zsombor_Pinter_Resume.pdf"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${border}
-      ${isDarkMode ? "hover:bg-slate-800" : "hover:bg-stone-100"}
+      ${isDarkMode ? "hover:bg-slate-700 bg-slate-900 border-slate-700" : "hover:bg-[#f6f5f1] bg-[#eae8de] border-stone-300"} "}]"}
     `}
               aria-label="Download Resume"
             >

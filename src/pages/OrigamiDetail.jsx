@@ -122,7 +122,29 @@ const OrigamiDetail = ({ isDarkMode }) => {
     );
   }
 
-  if (!item) return <div className="text-center py-20">Origami not found.</div>;
+  if (!item) {
+    return (
+      <div className="text-center py-32 animate-in fade-in duration-500">
+        <h1 className={`text-4xl font-bold mb-4 ${THEME.accent.text}`}>
+          Model Not Found
+        </h1>
+        <p
+          className={`text-lg mb-8 ${
+            isDarkMode ? "text-slate-400" : "text-stone-600"
+          }`}
+        >
+          The origami model you are looking for does not exist.
+        </p>
+        <Link
+
+          to="/gallery"
+          className={`px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} transition-transform hover:-translate-y-1 inline-block`}
+        >
+          Back to Gallery
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <>
