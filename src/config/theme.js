@@ -41,7 +41,7 @@ export const THEME = {
     textSub: "text-stone-700",
     card: "bg-[#eae8de]",
     border: "border-stone-300",
-    input: "bg-white",
+    input: "bg-[#f6f5f1]",
     inputBorder: "border-stone-300",
     inputText: "text-stone-900",
     footer: "bg-stone-100 border-stone-200",

@@ -95,8 +95,6 @@ const Home = ({ isDarkMode, openContact }) => {
         },
       ],
     },
-    
-
   ];
 
   const EDUCATION = [
@@ -199,7 +197,9 @@ const Home = ({ isDarkMode, openContact }) => {
 
       <div className="space-y-24">
         {/* HERO SECTION */}
-        <header className={`text-center pt-16 pb-16 rounded-lg ${cardBg} ${border} border-1 px-4`}>
+        <header
+          className={`text-center pt-16 pb-16 rounded-lg ${cardBg} ${border} border-1 px-4`}
+        >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
             Zsombor <span className={THEME.accent.text}>Pintér</span>
           </h1>
@@ -219,7 +219,11 @@ const Home = ({ isDarkMode, openContact }) => {
               rel="noreferrer"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${isDarkMode ? "hover:bg-slate-700 bg-slate-900 border-slate-700" : "hover:bg-[#f6f5f1] bg-[#eae8de] border-stone-300"} "}]"}
+      ${
+        isDarkMode
+          ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
+          : "hover:bg-[#eae8de] bg-[#d6d2bf] border-[#aea680]"
+      } "}]"}
     `}
               aria-label="GitHub"
             >
@@ -233,7 +237,11 @@ const Home = ({ isDarkMode, openContact }) => {
               rel="noreferrer"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${isDarkMode ? "hover:bg-slate-700 bg-slate-900 border-slate-700" : "hover:bg-[#f6f5f1] bg-[#eae8de] border-stone-300"} "}]"}
+      ${
+        isDarkMode
+          ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
+          : "hover:bg-[#eae8de] bg-[#d6d2bf] border-[#aea680]"
+      } "}]"}
     `}
               aria-label="LinkedIn"
             >
@@ -246,7 +254,11 @@ const Home = ({ isDarkMode, openContact }) => {
               to="/gallery"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${isDarkMode ? "hover:bg-slate-700 bg-slate-900 border-slate-700" : "hover:bg-[#f6f5f1] bg-[#eae8de] border-stone-300"} "}]"}
+      ${
+        isDarkMode
+          ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
+          : "hover:bg-[#eae8de] bg-[#d6d2bf] border-[#aea680]"
+      } "}]"}
     `}
               aria-label="Art Gallery"
             >
@@ -260,7 +272,11 @@ const Home = ({ isDarkMode, openContact }) => {
               download="Zsombor_Pinter_Resume.pdf"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${isDarkMode ? "hover:bg-slate-700 bg-slate-900 border-slate-700" : "hover:bg-[#f6f5f1] bg-[#eae8de] border-stone-300"} "}]"}
+      ${
+        isDarkMode
+          ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
+          : "hover:bg-[#eae8de] bg-[#d6d2bf] border-[#aea680]"
+      } "}]"}
     `}
               aria-label="Download Resume"
             >
@@ -272,7 +288,7 @@ const Home = ({ isDarkMode, openContact }) => {
           <div className="flex flex-wrap justify-center gap-4">
             <button
               onClick={openContact}
-              className={`cursor-pointer px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} inline-flex items-center transition-transform hover:scale-110 duration-200`}
+              className={`cursor-pointer px-8 py-3 ${THEME.accent.bg} text-white rounded-full font-bold ${THEME.accent.bgHover} inline-flex items-center`}
               aria-label="Get in Touch"
             >
               <Mail size={16} className="mr-2" />
@@ -289,12 +305,12 @@ const Home = ({ isDarkMode, openContact }) => {
           </div>
           <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
             <p className={`text-lg leading-relaxed ${THEME.text}`}>
-              I'm a Software Engineering student at the University of Szeged,
-              Hungary. Specializing in full-stack development. I focus on
-              creating clean, responsive applications that prioritize user
-              experience and minimalistic design. Beyond coding, I'm passionate
-              about origami art, which allows me to explore creativity and
-              precision in a different medium.
+              I'm a <strong>Software Engineering student</strong> based in,{" "}
+              <strong>Hungary</strong>. I focus on creating clean, responsive
+              applications that prioritize user experience and minimalistic
+              design. Beyond coding, I'm passionate about origami art, which
+              allows me to explore creativity and precision in a different
+              medium.
             </p>
           </div>
         </section>

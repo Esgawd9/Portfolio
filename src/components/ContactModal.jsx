@@ -12,6 +12,7 @@ import {
   Mail,
   User,
   MessageSquare,
+  Send,
 } from "lucide-react";
 
 import emailjs from "@emailjs/browser";
@@ -196,7 +197,10 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
                     <Loader2 size={20} className="animate-spin" /> Sending...
                   </>
                 ) : (
-                  <>Send Message</>
+                  <>
+                    <Send size={20} />
+                    Send Message
+                  </>
                 )}
               </button>
             </form>
