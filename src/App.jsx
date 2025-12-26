@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 
 import { auth } from "./config/firebase";
@@ -89,12 +94,7 @@ const App = () => {
             : `${THEME.light.bg} ${THEME.light.text}`
         }`}
       >
-        <Navbar
-          isDarkMode={isDarkMode}
-          toggleTheme={toggleTheme}
-          user={user}
-          setShowLoginModal={setShowLoginModal}
-        />
+        <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
 
         <ContactModal
           isOpen={showContactModal}
@@ -132,13 +132,13 @@ const App = () => {
                 <button
                   type="button"
                   onClick={() => setShowLoginModal(false)}
-                  className="px-4 py-2 text-gray-500"
+                  className="px-4 py-2 text-gray-100 cursor-pointer rounded border bg-gray-900 hover:bg-gray-800"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className={`px-4 py-2 ${THEME.accent.bg} text-white rounded ${THEME.accent.bgHover}`}
+                  className={`px-4 py-2 ${THEME.accent.bg} cursor-pointer text-white rounded ${THEME.accent.bgHover}`}
                 >
                   Login
                 </button>
@@ -147,11 +147,12 @@ const App = () => {
           </div>
         )}
 
-        <main className={`max-w-6xl mx-auto px-4 py-12 mt-12 grow w-full ${isDarkMode
-            ? `dark ${THEME.dark.main}`
-            : `${THEME.light.main}`} rounded-lg shadow-lg`}>
+        <main
+          className={`max-w-6xl mx-auto px-4 py-12 mt-12 grow w-full ${
+            isDarkMode ? `dark ${THEME.dark.main}` : `${THEME.light.main}`
+          } rounded-lg shadow-lg`}
+        >
           <Routes>
-
             <Route
               path="/"
               element={
@@ -173,7 +174,11 @@ const App = () => {
           </Routes>
         </main>
 
-        <Footer isDarkMode={isDarkMode} />
+        <Footer
+          isDarkMode={isDarkMode}
+          user={user}
+          setShowLoginModal={setShowLoginModal}
+        />
       </div>
     </Router>
   );

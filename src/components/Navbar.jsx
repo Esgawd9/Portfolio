@@ -5,14 +5,12 @@
 
 import { Link, useLocation } from "react-router-dom";
 import { Layers, LogOut, Lock, Sun, Moon } from "lucide-react";
-import { signOut } from "firebase/auth";
-import { auth } from "../config/firebase";
 import { THEME } from "../config/theme";
 
 // ==========================================
 // COMPONENT: NAVBAR
 // ==========================================
-const Navbar = ({ isDarkMode, toggleTheme, user, setShowLoginModal }) => {
+const Navbar = ({ isDarkMode, toggleTheme }) => {
   const location = useLocation();
   const isActive = (path) =>
     location.pathname === path
@@ -57,23 +55,7 @@ const Navbar = ({ isDarkMode, toggleTheme, user, setShowLoginModal }) => {
             </Link>
           </div>
           <div className="flex items-center gap-2">
-            {user ? (
-              <button
-                onClick={() => signOut(auth)}
-                className={`${THEME.accent.text} text-sm font-bold flex items-center gap-1 mr-2`}
-                aria-label="Admin Logout"
-              >
-                <LogOut size={16} />
-              </button>
-            ) : (
-              <button
-                onClick={() => setShowLoginModal(true)}
-                className={`opacity-20 hover:opacity-100 transition-opacity mr-2 ${textClasses}`}
-                aria-label="Admin Login"
-              >
-                <Lock size={16} />
-              </button>
-            )}
+            
             <button
               onClick={toggleTheme}
               className={`cursor-pointer p-2 rounded-full ${
