@@ -198,7 +198,7 @@ const Home = ({ isDarkMode, openContact }) => {
       <div className="space-y-24">
         {/* HERO SECTION */}
         <header
-          className={`text-center pt-16 pb-16 rounded-lg ${cardBg} ${border} border-1 px-4`}
+          className={`text-center pt-16 pb-16 rounded-xl ${cardBg} ${border} border-1 px-4`}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
             Zsombor <span className={THEME.accent.text}>Pintér</span>
@@ -303,7 +303,7 @@ const Home = ({ isDarkMode, openContact }) => {
             <User className={`w-6 h-6 ${THEME.accent.text}`} />
             <h2 className="text-3xl font-bold">About Me</h2>
           </div>
-          <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
+          <div className={`p-6 rounded-xl border ${cardBg} ${border}`}>
             <p className={`text-lg leading-relaxed ${THEME.text}`}>
               I'm a <strong>Software Engineering student</strong> based in,{" "}
               <strong>Hungary</strong>. I focus on creating clean, responsive

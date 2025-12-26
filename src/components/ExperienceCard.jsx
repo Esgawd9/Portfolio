@@ -6,7 +6,7 @@ const ExperienceCard = ({ experience, isDarkMode, theme }) => {
   const textSub = isDarkMode ? theme.dark.textSub : theme.light.textSub;
 
   return (
-    <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
+    <div className={`p-6 rounded-xl border ${cardBg} ${border}`}>
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-xl font-bold">{experience.title}</h3>

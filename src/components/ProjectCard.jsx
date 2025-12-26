@@ -27,7 +27,7 @@ const ProjectCard = ({ project, isDarkMode }) => {
 
   return (
     <div
-      className={`rounded-2xl overflow-hidden shadow-md border flex flex-col ${cardBg} ${border}`}
+      className={`rounded-xl overflow-hidden shadow-md border flex flex-col ${cardBg} ${border}`}
     >
       {/* Top Section: Icon & Title */}
       <div

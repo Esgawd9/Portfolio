@@ -194,7 +194,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
         <div className="mb-8 pb-4 flex flex-col lg:flex-row gap-12">
           <div className="lg:w-2/3">
             <div
-              className="relative overflow-hidden shadow-2xl cursor-zoom-in group rounded-2xl"
+              className="relative overflow-hidden shadow-2xl cursor-zoom-in group rounded-xl"
               onClick={() => setLightboxOpen(true)}
             >
               <img

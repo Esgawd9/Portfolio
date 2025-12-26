@@ -40,7 +40,7 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
 
   const labelClasses = `block text-xs font-bold uppercase tracking-wider mb-1 ${themeMode.textSub}`;
 
-  const modalContainerClasses = `relative w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 border ${themeMode.card} ${themeMode.border}`;
+  const modalContainerClasses = `relative w-full max-w-md rounded-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 border ${themeMode.card} ${themeMode.border}`;
 
   const headerBorderClass = `p-6 border-b ${themeMode.border}`;
   const closeButtonClass = `cursor-pointer p-2 rounded-full transition-colors ${

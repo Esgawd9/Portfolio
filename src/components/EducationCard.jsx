@@ -6,7 +6,7 @@ const EducationCard = ({ education, isDarkMode, theme }) => {
   const textSub = isDarkMode ? theme.dark.textSub : theme.light.textSub;
 
   return (
-    <div className={`p-6 rounded-2xl border ${cardBg} ${border}`}>
+    <div className={`p-6 rounded-xl border ${cardBg} ${border}`}>
       <div className="flex justify-between items-start mb-2">
         <h3 className="text-xl font-bold">{education.degree}</h3>
         <span className="text-sm opacity-60 shrink-0 ml-4">
