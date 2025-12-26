@@ -238,7 +238,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
             </div>
           </div>
         </div>
-        <div>
+        <div className={`p-6 rounded-xl border ${cardBg} ${border}`}>
           <h3 className="text-xl font-bold mb-3">Description</h3>
           <p className={`leading-relaxed ${textSub} lg:w-2/3`}>
             {item.desc || "No description."}
