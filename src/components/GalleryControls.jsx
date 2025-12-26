@@ -18,7 +18,7 @@ const GalleryControls = ({ searchQuery, setSearchQuery, isDarkMode }) => {
     <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-6">
       <div className="flex items-center gap-3">
         <Grid className={`w-6 h-6 ${THEME.accent.text}`} />
-        <h2 className="text-3xl font-bold">Gallery</h2>
+        <h1 className="text-3xl font-bold">Gallery</h1>
       </div>
       <div className="flex flex-col md:flex-row gap-4">
         <div className="relative">

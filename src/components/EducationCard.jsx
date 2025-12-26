@@ -9,7 +9,7 @@ const EducationCard = ({ education, isDarkMode, theme }) => {
     <div className={`p-6 rounded-xl border ${cardBg} ${border}`}>
       <div className="flex justify-between items-start mb-2">
         <h3 className="text-xl font-bold">{education.degree}</h3>
-        <span className="text-sm opacity-60 shrink-0 ml-4">
+        <span className="text-sm opacity-90 italic shrink-0 ml-4">
           {education.period}
         </span>
       </div>

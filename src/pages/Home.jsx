@@ -198,7 +198,7 @@ const Home = ({ isDarkMode, openContact }) => {
       <div className="space-y-24">
         {/* HERO SECTION */}
         <header
-          className={`text-center pt-16 pb-16 rounded-xl ${cardBg} ${border} border-1 px-4`}
+          className={`text-center pt-16 pb-16 rounded-xl ${cardBg} ${border} border px-4`}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
             Zsombor <span className={THEME.accent.text}>Pintér</span>
@@ -222,7 +222,7 @@ const Home = ({ isDarkMode, openContact }) => {
       ${
         isDarkMode
           ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
-          : "hover:bg-[#eae8de] bg-[#d6d2bf] border-[#aea680]"
+          : "hover:bg-[#eae8de] bg-[#ece5cc] border-[#d4cdad]"
       } "}]"}
     `}
               aria-label="GitHub"
@@ -240,7 +240,7 @@ const Home = ({ isDarkMode, openContact }) => {
       ${
         isDarkMode
           ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
-          : "hover:bg-[#eae8de] bg-[#d6d2bf] border-[#aea680]"
+          : "hover:bg-[#eae8de] bg-[#ece5cc] border-[#d4cdad]"
       } "}]"}
     `}
               aria-label="LinkedIn"
@@ -257,7 +257,7 @@ const Home = ({ isDarkMode, openContact }) => {
       ${
         isDarkMode
           ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
-          : "hover:bg-[#eae8de] bg-[#d6d2bf] border-[#aea680]"
+          : "hover:bg-[#eae8de] bg-[#ece5cc] border-[#d4cdad]"
       } "}]"}
     `}
               aria-label="Art Gallery"
@@ -275,7 +275,7 @@ const Home = ({ isDarkMode, openContact }) => {
       ${
         isDarkMode
           ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
-          : "hover:bg-[#eae8de] bg-[#d6d2bf] border-[#aea680]"
+          : "hover:bg-[#eae8de] bg-[#ece5cc] border-[#d4cdad]"
       } "}]"}
     `}
               aria-label="Download Resume"

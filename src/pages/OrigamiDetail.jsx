@@ -31,7 +31,6 @@ const OrigamiDetail = ({ isDarkMode }) => {
   const skeletonClass = `rounded-xl ${    
     isDarkMode ? "bg-slate-800" : "bg-stone-200"
   }`;
-  const bgSecondary = isDarkMode ? "bg-slate-700" : "bg-stone-100";
 
   // Theme shortcuts
   const textSub = isDarkMode ? THEME.dark.textSub : THEME.light.textSub;
@@ -223,17 +222,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
                 <InfoRow icon={<User />} label="Artist" value={item.artist} />
                 <InfoRow icon={<Scroll />} label="Paper" value={item.paper} />
                 <InfoRow icon={<Calendar />} label="Date" value={item.date} />
-                <div className="flex items-start gap-3">
-                  <Layers className={`${THEME.accent.text} mt-1 w-5 h-5`} />
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase font-bold">
-                      Difficulty
-                    </p>
-                    <span className={`inline-block px-2 py-0.5 rounded text-xs font-bold mt-1 ${bgSecondary} ${textSub}`}>
-                      {item.difficulty}
-                    </span>
-                  </div>
-                </div>
+                <InfoRow icon={<Layers />} label="Difficulty" value={item.difficulty} />
               </div>
             </div>
           </div>

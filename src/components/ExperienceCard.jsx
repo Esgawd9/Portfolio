@@ -14,7 +14,7 @@ const ExperienceCard = ({ experience, isDarkMode, theme }) => {
             {experience.company}
           </p>
         </div>
-        <span className="text-sm opacity-60 shrink-0 ml-4">
+        <span className="text-sm opacity-90 italic shrink-0 ml-4">
           {experience.period}
         </span>
       </div>
