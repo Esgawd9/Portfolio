@@ -60,18 +60,22 @@ const Home = ({ isDarkMode, openContact }) => {
   const cardBg = isDarkMode ? THEME.dark.card : THEME.light.card;
   const border = isDarkMode ? THEME.dark.border : THEME.light.border;
 
+  const social = isDarkMode ? THEME.dark.social : THEME.light.social;
+  const socialHover = isDarkMode
+    ? THEME.dark.socialHover
+    : THEME.light.socialHover;
+  const socialBorder = isDarkMode
+    ? THEME.dark.socialBorder
+    : THEME.light.socialBorder;
+
+  const headerSocial = `${social} ${socialHover} ${socialBorder}`;
+
   const EXPERIENCES = [
-    // {
-    //   title: "Intern - Full-stack Developer",
-    //   company: "IT NET SOLUTION LTD",
-    //   period: "2026 Jan - Present",
-    //   points: [
-    //     {
-    //       label: "Full-stack Development",
-    //       text: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    //     },
-    //   ],
-    // },
+    {
+      title: "Intern - Full-stack Developer",
+      company: "IT NET SOLUTION LTD",
+      period: "2026 Jan - Present",
+    },
     {
       title: "Intern - Web Developer",
       company: "origin/develop Kft.",
@@ -219,10 +223,8 @@ const Home = ({ isDarkMode, openContact }) => {
               rel="noreferrer"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${
-        isDarkMode
-          ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
-          : "hover:bg-[#eae8de] bg-[#ece5cc] border-[#d4cdad]"
+      ${headerSocial}
+        
       } "}]"}
     `}
               aria-label="GitHub"
@@ -237,10 +239,7 @@ const Home = ({ isDarkMode, openContact }) => {
               rel="noreferrer"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${
-        isDarkMode
-          ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
-          : "hover:bg-[#eae8de] bg-[#ece5cc] border-[#d4cdad]"
+      ${headerSocial}
       } "}]"}
     `}
               aria-label="LinkedIn"
@@ -254,11 +253,9 @@ const Home = ({ isDarkMode, openContact }) => {
               to="/gallery"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${
-        isDarkMode
-          ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
-          : "hover:bg-[#eae8de] bg-[#ece5cc] border-[#d4cdad]"
-      } "}]"}
+      
+      ${headerSocial} 
+       "}]"}
     `}
               aria-label="Art Gallery"
             >
@@ -272,10 +269,7 @@ const Home = ({ isDarkMode, openContact }) => {
               download="Zsombor_Pinter_Resume.pdf"
               className={`
       inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
-      ${
-        isDarkMode
-          ? "hover:bg-slate-700 bg-slate-900 border-slate-700"
-          : "hover:bg-[#eae8de] bg-[#ece5cc] border-[#d4cdad]"
+      ${headerSocial}
       } "}]"}
     `}
               aria-label="Download Resume"

@@ -4,7 +4,7 @@
 // =========================================
 
 import React from "react";
-import { Github, Linkedin, Mail, Lock } from "lucide-react";
+import { Github, Linkedin, LogOut, Mail, Lock } from "lucide-react";
 import { THEME } from "../config/theme";
 
 import { signOut } from "firebase/auth";

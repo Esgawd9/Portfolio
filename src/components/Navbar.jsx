@@ -4,7 +4,7 @@
 // =========================================
 
 import { Link, useLocation } from "react-router-dom";
-import { Layers, LogOut, Lock, Sun, Moon } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 import { THEME } from "../config/theme";
 
 // ==========================================

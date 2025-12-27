@@ -20,7 +20,7 @@ const ExperienceCard = ({ experience, isDarkMode, theme }) => {
       </div>
 
       <ul className={`space-y-3 text-sm leading-relaxed ${textSub}`}>
-        {experience.points.map((point, index) => (
+        {experience.points && experience.points.map((point, index) => (
           <li key={index}>
             <strong>{point.label}: </strong> {point.text}
           </li>
