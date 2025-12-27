@@ -55,7 +55,9 @@ const GalleryCard = ({ item, user, isDarkMode, handleEdit, handleDelete }) => {
 
         <img
           src={item.image}
-          alt={item.title + " origami model origami model folded by Zsombor Pintér"}
+          alt={
+            item.title + " origami model origami model folded by Zsombor Pintér"
+          }
           loading="lazy"
           onLoad={() => setIsImageLoaded(true)}
           className={`w-full h-full object-cover ${
@@ -74,9 +76,9 @@ const GalleryCard = ({ item, user, isDarkMode, handleEdit, handleDelete }) => {
           </span>
 
           {/* Title */}
-          <h3 className="text-xl font-bold text-amber-50 leading-tight drop-shadow-md">
+          <h2 className="text-xl font-bold text-amber-50 leading-tight drop-shadow-md">
             {item.title}
-          </h3>
+          </h2>
         </div>
       </div>
     </Link>
