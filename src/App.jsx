@@ -6,8 +6,8 @@ import {
   useLocation,
 } from "react-router-dom";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
-import { injectSpeedInsights } from '@vercel/speed-insights';
-import { inject } from '@vercel/analytics';
+import { injectSpeedInsights } from "@vercel/speed-insights";
+import { inject } from "@vercel/analytics";
 
 import { auth } from "./config/firebase";
 import { THEME } from "./config/theme";
@@ -16,6 +16,7 @@ import { THEME } from "./config/theme";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ContactModal from "./components/ContactModal";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 // Pages
 import Home from "./pages/Home";
@@ -33,7 +34,6 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
-
   // Vercel Speed Insights Injection
   injectSpeedInsights();
   // Vercel Analytics Injection
@@ -179,6 +179,12 @@ const App = () => {
               element={<OrigamiDetail isDarkMode={isDarkMode} />}
             />
             <Route path="*" element={<NotFound isDarkMode={isDarkMode} />} />
+
+            <Route
+              path="/privacy"
+              element={<PrivacyPolicy isDarkMode={isDarkMode} />}
+            />
+
           </Routes>
         </main>
 

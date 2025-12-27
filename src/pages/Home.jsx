@@ -215,7 +215,7 @@ const Home = ({ isDarkMode, openContact }) => {
           </p>
 
           {/* Contact Links */}
-          <div className="flex flex-col items-center justify-center gap-4 mb-10 text-sm sm:flex-row sm:flex-wrap">
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-10 text-sm sm:flex-row sm:flex-wrap">
             {/* GitHub */}
             <a
               href="https://github.com/Esgawd9"
@@ -233,6 +233,7 @@ const Home = ({ isDarkMode, openContact }) => {
               GitHub
             </a>
 
+            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/zsombor-pinter"
               target="_blank"
@@ -248,7 +249,22 @@ const Home = ({ isDarkMode, openContact }) => {
               LinkedIn
             </a>
 
-            {/* Gallery TODO: theme variables */}
+            {/* Email */}
+            <a
+              href="mailto:zsombor.pinter0105@gmail.com"
+              rel="noreferrer"
+              className={`
+      inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
+      ${headerSocial}
+      } "}]"}
+    `}
+              aria-label="LinkedIn"
+            >
+              <Mail size={16} className={THEME.accent.text} />
+              Email
+            </a>
+
+            {/* Gallery */}
             <Link
               to="/gallery"
               className={`

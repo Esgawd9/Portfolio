@@ -7,6 +7,8 @@ import React from "react";
 import { Github, Linkedin, LogOut, Mail, Lock } from "lucide-react";
 import { THEME } from "../config/theme";
 
+import { Link } from "react-router-dom";
+
 import { signOut } from "firebase/auth";
 import { auth } from "../config/firebase";
 
@@ -21,7 +23,17 @@ const Footer = ({ isDarkMode, user, setShowLoginModal }) => {
   return (
     <footer className={`py-10 text-center border-t mt-20 ${footerClass}`}>
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className={textClass}>© {year} Zsombor Pintér</p>
+        <div className="flex flex-col md:flex-row items-center gap-4">
+          <p className={textClass}>
+            © {year} Pintér Zsombor
+          </p>
+          <Link
+            to="/privacy"
+            className={`${textClass} opacity-60 hover:text-red-500 transition-colors underline`}
+          >
+            Privacy Policy
+          </Link>
+        </div>
         <div className="flex gap-6 text-sm font-medium">
           <a
             href="https://github.com/Esgawd9"

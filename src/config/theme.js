@@ -49,8 +49,8 @@ export const THEME = {
     inputText: "text-stone-900",
     footer: "bg-stone-100 border-stone-200",
     main: "bg-[#f6f5f1]",
-    social: "bg-[#d4cdad]",
+    social: "bg-[#c6bca5]",
     socialHover: "hover:bg-[#eae8de]",
-    socialBorder: "border-[#ada787]",
+    socialBorder: "border-[#aea080]",
   },
 };
