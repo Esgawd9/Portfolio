@@ -50,6 +50,7 @@ import {
   SiMysql,
   SiPlatformdotsh,
   SiTailwindcss,
+  SiC,
 } from "react-icons/si";
 
 // ==========================================
@@ -124,9 +125,15 @@ const Home = ({ isDarkMode, openContact }) => {
     },
     { name: "Java", icon: FaJava, color: "bg-red-500", text: "text-white" },
     {
-      name: "C/C++",
+      name: "C++",
       icon: SiCplusplus,
       color: "bg-blue-700",
+      text: "text-white",
+    },
+    {
+      name: "C",
+      icon: SiC,
+      color: "bg-indigo-700",
       text: "text-white",
     },
     {
@@ -138,9 +145,15 @@ const Home = ({ isDarkMode, openContact }) => {
     { name: "React", icon: FaReact, color: "bg-sky-500", text: "text-white" },
     { name: "PHP", icon: FaPhp, color: "bg-indigo-500", text: "text-white" },
     {
-      name: "HTML/CSS",
+      name: "HTML",
       icon: FaHtml5,
       color: "bg-orange-500",
+      text: "text-white",
+    },
+    {
+      name: "CSS",
+      icon: FaCss3Alt,
+      color: "bg-blue-500",
       text: "text-white",
     },
     { name: "SQL", icon: SiMysql, color: "bg-blue-600", text: "text-white" },
@@ -332,7 +345,7 @@ const Home = ({ isDarkMode, openContact }) => {
             <h2 className="text-3xl font-bold">Technical Skills</h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
             {SKILLS.map((skill) => (
               <SkillCard
                 key={skill.name}

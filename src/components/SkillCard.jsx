@@ -20,12 +20,10 @@ const SkillCard = ({ skill, isDarkMode }) => {
 
   return (
     <div
-      className="group h-32 perspective-1000 cursor-pointer select-none"
+      className="group h-24 perspective-1000 cursor-pointer select-none"
       onClick={handleFlip}
     >
-      {/* INNER CONTAINER 
-        We replaced 'group-hover:rotate-y-180' with a conditional class based on state 
-      */}
+      {/* INNER CONTAINER */}
       <div
         className={`relative h-full w-full transition-transform duration-500 transform-style-3d ${
           isFlipped ? "rotate-y-180" : ""
