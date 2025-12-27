@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { injectSpeedInsights } from '@vercel/speed-insights';
+import { inject } from '@vercel/analytics';
 
 import { auth } from "./config/firebase";
 import { THEME } from "./config/theme";
@@ -35,6 +36,8 @@ const App = () => {
 
   // Vercel Speed Insights Injection
   injectSpeedInsights();
+  // Vercel Analytics Injection
+  inject();
 
   // Initialize state by checking Local Storage first, then System Preference
   const [isDarkMode, setIsDarkMode] = useState(() => {
