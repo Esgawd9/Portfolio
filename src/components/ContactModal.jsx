@@ -40,7 +40,7 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
 
   const labelClasses = `block text-xs font-bold uppercase tracking-wider mb-1 ${themeMode.textSub}`;
 
-  const modalContainerClasses = `relative w-full max-w-md rounded-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200 border ${themeMode.card} ${themeMode.border}`;
+  const modalContainerClasses = `relative w-full max-w-md rounded-xl shadow-2xl overflow-hidden border ${themeMode.card} ${themeMode.border}`;
 
   const headerBorderClass = `p-6 border-b ${themeMode.border}`;
   const closeButtonClass = `cursor-pointer p-2 rounded-full transition-colors ${
@@ -82,7 +82,7 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
       onClick={onClose}
     >
       {/* Modal Content */}
@@ -103,7 +103,7 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
         </div>
 
         {/* Body */}
-        <div className="p-6">
+        <div className="p-6 overflow-y-auto max-h-[calc(90vh-88px)]">
           {status === "success" ? (
             <div className="py-12 flex flex-col items-center text-center animate-in fade-in">
               <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">

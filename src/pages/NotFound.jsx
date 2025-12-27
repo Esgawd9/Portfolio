@@ -12,7 +12,7 @@ import { THEME } from "../config/theme";
 // COMPONENT: NOT FOUND (404)
 // ==========================================
 const NotFound = ({ isDarkMode }) => (
-  <div className="text-center py-32 animate-in fade-in zoom-in duration-500">
+  <div className="text-center py-32">
     
     <h1 className={`text-6xl font-bold mb-4 ${THEME.accent.text}`}>404</h1>
     <p

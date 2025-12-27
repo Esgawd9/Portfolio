@@ -123,7 +123,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
 
   if (!item) {
     return (
-      <div className="text-center py-32 animate-in fade-in duration-500">
+      <div className="text-center py-32">
         <h1 className={`text-4xl font-bold mb-4 ${THEME.accent.text}`}>
           Model Not Found
         </h1>
@@ -153,7 +153,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
         path={`/gallery/${id}`}
       />
 
-      <div className="animate-in fade-in duration-300">
+      <div>
         {lightboxOpen && (
           <div
             className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"

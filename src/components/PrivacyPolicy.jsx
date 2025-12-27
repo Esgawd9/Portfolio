@@ -12,7 +12,7 @@ const PrivacyPolicy = ({ isDarkMode }) => {
   const headingClass = "text-xl font-bold mb-3 mt-8 first:mt-0";
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-500">
+    <div className="max-w-4xl mx-auto space-y-8">
       <header className="py-8 border-b border-gray-200 dark:border-gray-800">
         <div className="flex items-center gap-3 mb-2">
           <h1 className="text-4xl font-bold">Privacy Policy</h1>
