@@ -6,6 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 import { auth } from "./config/firebase";
 import { THEME } from "./config/theme";
@@ -31,6 +32,10 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
+
+  // Vercel Speed Insights Injection
+  injectSpeedInsights();
+
   // Initialize state by checking Local Storage first, then System Preference
   const [isDarkMode, setIsDarkMode] = useState(() => {
     // 1. Check if user has a saved preference in localStorage
