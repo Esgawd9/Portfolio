@@ -19,7 +19,7 @@ export const useOrigami = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const q = query(collection(db, "origami"), orderBy("title", "asc"));
+    const q = query(collection(db, "origami"), orderBy("date", "desc"));
     const unsubscribe = onSnapshot(q, (snapshot) => {
       setItems(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
       setLoading(false);

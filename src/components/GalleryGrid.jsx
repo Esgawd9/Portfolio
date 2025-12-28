@@ -15,10 +15,7 @@ const GalleryGrid = ({
   onEdit,
   onDelete,
 }) => {
-  // Theme Shortcuts
-  const cardBg = isDarkMode ? THEME.dark.card : THEME.light.card;
-  const border = isDarkMode ? THEME.dark.border : THEME.light.border;
-  const textMain = isDarkMode ? THEME.dark.text : THEME.light.text;
+
 
   if (loading) {
     return (
@@ -37,7 +34,7 @@ const GalleryGrid = ({
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <GalleryCard
           key={item.id}
           item={item}
@@ -45,9 +42,7 @@ const GalleryGrid = ({
           isDarkMode={isDarkMode}
           handleEdit={onEdit}
           handleDelete={onDelete}
-          cardBg={cardBg}
-          border={border}
-          textMain={textMain}
+          index={index}
         />
       ))}
     </div>

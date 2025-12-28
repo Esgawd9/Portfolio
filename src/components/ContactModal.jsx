@@ -105,7 +105,7 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
         {/* Body */}
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-88px)]">
           {status === "success" ? (
-            <div className="py-12 flex flex-col items-center text-center animate-in fade-in">
+            <div className="py-12 flex flex-col items-center text-center">
               <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
                 <CheckCircle size={32} />
               </div>

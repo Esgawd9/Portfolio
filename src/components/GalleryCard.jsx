@@ -8,8 +8,9 @@ import { Link } from "react-router-dom";
 import { Pencil, Trash2, Loader2 } from "lucide-react";
 import { THEME } from "../config/theme";
 
-const GalleryCard = ({ item, user, isDarkMode, handleEdit, handleDelete }) => {
+const GalleryCard = ({ item, user, isDarkMode, handleEdit, handleDelete, index }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const isPriority = index < 6;
 
   return (
     <Link
@@ -58,7 +59,9 @@ const GalleryCard = ({ item, user, isDarkMode, handleEdit, handleDelete }) => {
           alt={
             item.title + " origami model origami model folded by Zsombor Pintér"
           }
-          loading="lazy"
+          loading={isPriority ? "eager" : "lazy"}
+          fetchPriority={isPriority ? "high" : "auto"}
+          decoding="async"
           onLoad={() => setIsImageLoaded(true)}
           className={`w-full h-full object-cover ${
             isImageLoaded ? "opacity-100" : "opacity-0"
