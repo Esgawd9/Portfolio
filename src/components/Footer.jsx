@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 
 import { signOut } from "firebase/auth";
 import { auth } from "../config/firebase";
+import { Palette, ExternalLink } from "lucide-react";
+import { SiLinkedin } from "react-icons/si";
 
 // ==========================================
 // COMPONENT: FOOTER
@@ -24,9 +26,7 @@ const Footer = ({ isDarkMode, user, setShowLoginModal }) => {
     <footer className={`py-10 text-center border-t mt-20 ${footerClass}`}>
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex flex-col md:flex-row items-center gap-4">
-          <p className={textClass}>
-            © {year} Pintér Zsombor
-          </p>
+          <p className={textClass}>© {year} Pintér Zsombor</p>
           <Link
             to="/privacy"
             className={`${textClass} opacity-60 hover:text-red-500 transition-colors underline`}
@@ -42,7 +42,7 @@ const Footer = ({ isDarkMode, user, setShowLoginModal }) => {
             className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
             aria-label="GitHub Link"
           >
-            <Github size={14} /> GitHub
+            <Github size={14} /> GitHub <ExternalLink size={10} />
           </a>
           <a
             href="https://www.linkedin.com/in/zsombor-pinter"
@@ -51,7 +51,7 @@ const Footer = ({ isDarkMode, user, setShowLoginModal }) => {
             className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
             aria-label="LinkedIn Link"
           >
-            <Linkedin size={14} /> LinkedIn
+            <SiLinkedin size={14} /> LinkedIn <ExternalLink size={10} />
           </a>
           <a
             href="mailto:zsombor.pinter0105@gmail.com"
@@ -60,6 +60,13 @@ const Footer = ({ isDarkMode, user, setShowLoginModal }) => {
           >
             <Mail size={14} /> Email
           </a>
+          <Link
+            to="/gallery"
+            className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
+          >
+            <Palette size={14} />
+            Gallery
+          </Link>
           {user ? (
             <button
               onClick={() => signOut(auth)}

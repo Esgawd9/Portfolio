@@ -19,6 +19,8 @@ import {
   Gamepad2,
   Linkedin,
   User,
+  ExternalLink,
+  Download,
 } from "lucide-react";
 
 // Theme configuration
@@ -244,6 +246,7 @@ const Home = ({ isDarkMode, openContact }) => {
             >
               <Github size={16} className={THEME.accent.text} />
               GitHub
+              <ExternalLink size={10} />
             </a>
 
             {/* LinkedIn */}
@@ -260,6 +263,7 @@ const Home = ({ isDarkMode, openContact }) => {
             >
               <Linkedin size={16} className={THEME.accent.text} />
               LinkedIn
+              <ExternalLink size={10} />
             </a>
 
             {/* Email */}
@@ -305,6 +309,7 @@ const Home = ({ isDarkMode, openContact }) => {
             >
               <FileText size={18} />
               Download CV
+              <Download size={14} />
             </a>
           </div>
 
