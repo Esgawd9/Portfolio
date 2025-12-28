@@ -34,7 +34,7 @@ const Footer = ({ isDarkMode, user, setShowLoginModal }) => {
             Privacy Policy
           </Link>
         </div>
-        <div className="flex gap-6 text-sm font-medium">
+        <div className="flex gap-3 md:gap-6 text-sm font-medium">
           <a
             href="https://github.com/Esgawd9"
             target="_blank"
@@ -42,7 +42,8 @@ const Footer = ({ isDarkMode, user, setShowLoginModal }) => {
             className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
             aria-label="GitHub Link"
           >
-            <Github size={14} /> GitHub <ExternalLink size={10} />
+            <Github size={14} className="hidden md:block" /> GitHub{" "}
+            <ExternalLink size={10} />
           </a>
           <a
             href="https://www.linkedin.com/in/zsombor-pinter"
@@ -51,20 +52,21 @@ const Footer = ({ isDarkMode, user, setShowLoginModal }) => {
             className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
             aria-label="LinkedIn Link"
           >
-            <SiLinkedin size={14} /> LinkedIn <ExternalLink size={10} />
+            <SiLinkedin size={14} className="hidden md:block" /> LinkedIn{" "}
+            <ExternalLink size={10} />
           </a>
           <a
             href="mailto:zsombor.pinter0105@gmail.com"
             className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
             aria-label="Email Link"
           >
-            <Mail size={14} /> Email
+            <Mail size={14} className="hidden md:block" /> Email
           </a>
           <Link
             to="/gallery"
             className={`${textClass} hover:text-red-500 transition-colors flex items-center gap-1`}
           >
-            <Palette size={14} />
+            <Palette size={14} className="hidden md:block" />
             Gallery
           </Link>
           {user ? (

@@ -230,14 +230,14 @@ const Home = ({ isDarkMode, openContact }) => {
           </p>
 
           {/* Contact Links */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-10 text-sm sm:flex-row sm:flex-wrap">
+          <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-4 mb-10 text-sm sm:flex-row sm:flex-wrap">
             {/* GitHub */}
             <a
               href="https://github.com/Esgawd9"
               target="_blank"
               rel="noreferrer"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
+      inline-flex items-center w-50 justify-center md:w-auto w-50 justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2
       ${headerSocial}
         
       } "}]"}
@@ -255,7 +255,7 @@ const Home = ({ isDarkMode, openContact }) => {
               target="_blank"
               rel="noreferrer"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
+      inline-flex items-center w-50 justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2
       ${headerSocial}
       } "}]"}
     `}
@@ -271,7 +271,7 @@ const Home = ({ isDarkMode, openContact }) => {
               href="mailto:zsombor.pinter0105@gmail.com"
               rel="noreferrer"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
+      inline-flex items-center w-50 justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2
       ${headerSocial}
       } "}]"}
     `}
@@ -285,7 +285,7 @@ const Home = ({ isDarkMode, openContact }) => {
             <Link
               to="/gallery"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
+      inline-flex items-center w-50 justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2
       
       ${headerSocial} 
        "}]"}
@@ -301,7 +301,7 @@ const Home = ({ isDarkMode, openContact }) => {
               href="/resume.pdf"
               download="Zsombor_Pinter_Resume.pdf"
               className={`
-      inline-flex items-center gap-2 px-4 py-2 rounded-full border-2
+      inline-flex items-center w-50 justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2
       ${headerSocial}
       } "}]"}
     `}
