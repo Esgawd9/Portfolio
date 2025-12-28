@@ -36,3 +36,15 @@
 ::-webkit-scrollbar-thumb:hover {
   background: oklch(0.35 0.01 260);
 }
+
+::selection {
+    background: #0388fc;
+    color: white;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: #0388fc;
+    color: white;
+    text-shadow: none;
+}
