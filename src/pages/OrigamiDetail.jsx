@@ -20,6 +20,20 @@ import { THEME } from "../config/theme";
 
 import SEO from "../components/SEO";
 
+
+
+const InfoRow = ({ icon, label, value }) => (
+  <div className="flex items-start gap-3">
+    <div className={`${THEME.accent.text} mt-1 w-10 h-6`}>{icon}</div>
+    <div>
+      <p className="text-xs text-gray-500 uppercase font-bold">{label}</p>
+      <p className="font-medium">{value || "Unknown"}</p>
+    </div>
+  </div>
+);
+
+
+
 // ==========================================
 // COMPONENT: DETAIL PAGE
 // ==========================================
@@ -219,10 +233,10 @@ const OrigamiDetail = ({ isDarkMode }) => {
                 Model Details
               </h3>
               <div className="space-y-4">
-                <InfoRow icon={<User />} label="Artist" value={item.artist} />
-                <InfoRow icon={<Scroll />} label="Paper" value={item.paper} />
-                <InfoRow icon={<Calendar />} label="Date" value={item.date} />
-                <InfoRow icon={<Layers />} label="Difficulty" value={item.difficulty} />
+                <InfoRow icon={<User className="w-8 h-8" />} label="Artist" value={item.artist} />
+                <InfoRow icon={<Scroll className="w-8 h-8" />} label="Paper" value={item.paper} />
+                <InfoRow icon={<Calendar className="w-8 h-8" />} label="Date" value={item.date} />
+                <InfoRow icon={<Layers className="w-8 h-8" />} label="Difficulty" value={item.difficulty} />
               </div>
             </div>
           </div>
@@ -239,16 +253,3 @@ const OrigamiDetail = ({ isDarkMode }) => {
 };
 
 export default OrigamiDetail;
-
-// ==========================================
-// COMPONENT: INFO ROW
-// ==========================================
-const InfoRow = ({ icon, label, value }) => (
-  <div className="flex items-start gap-3">
-    <div className={`${THEME.accent.text} mt-1 w-5 h-5`}>{icon}</div>
-    <div>
-      <p className="text-xs text-gray-500 uppercase font-bold">{label}</p>
-      <p className="font-medium">{value || "Unknown"}</p>
-    </div>
-  </div>
-);

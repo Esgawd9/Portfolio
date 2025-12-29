@@ -30,7 +30,7 @@ const ContactModal = ({ isOpen, onClose, isDarkMode }) => {
   // --- THEME MAPPING ---
   const themeMode = isDarkMode ? THEME.dark : THEME.light;
 
-  const inputClasses = `w-full p-3 rounded-lg border outline-none transition-all ${
+  const inputClasses = `w-full p-3 rounded-lg border-2 outline-none transition-all ${
     themeMode.input
   } ${themeMode.inputBorder} ${themeMode.inputText} ${
     isDarkMode

@@ -155,8 +155,9 @@ const App = () => {
           </div>
         )}
 
+        <div className="grow">
         <main
-          className={`max-w-6xl mx-auto px-4 py-12 mt-12 grow w-full ${
+          className={`max-w-6xl mx-auto px-4 py-12 mt-12 w-full ${
             isDarkMode ? `dark ${THEME.dark.main}` : `${THEME.light.main}`
           } rounded-lg shadow-lg`}
         >
@@ -187,6 +188,7 @@ const App = () => {
 
           </Routes>
         </main>
+        </div>
 
         <Footer
           isDarkMode={isDarkMode}
