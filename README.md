@@ -5,7 +5,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 
-A modern, responsive personal portfolio built to showcase creative work and technical projects.
+A personal portfolio built to showcase creative work and technical projects.
 
 **[View Live Demo](https://www.zsombor-pinter.site)**
 
