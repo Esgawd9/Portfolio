@@ -11,36 +11,32 @@ const ProjectCard = ({ project, isDarkMode }) => {
   // Theme shortcuts
   const cardBg = isDarkMode ? THEME.dark.card : THEME.light.card;
   const border = isDarkMode ? THEME.dark.border : THEME.light.border;
-  const bgSecondary = isDarkMode ? "bg-slate-700" : "bg-stone-100";
+  const bgSecondary = isDarkMode ? THEME.dark.social : THEME.light.social;
   const textSub = isDarkMode ? THEME.dark.textSub : THEME.light.textSub;
 
   // Destructure project data
-  const {
-    title,
-    subtitle,
-    description,
-    icon: Icon,
-    tags,
-    link,
-    repo,
-  } = project;
+  const { title, description, icon: Icon, tags, link, repo } = project;
 
   return (
     <div
-      className={`rounded-xl overflow-hidden shadow-md border flex flex-col ${cardBg} ${border}`}
+      className={`rounded-xl overflow-hidden border flex flex-col ${cardBg} ${border}`}
     >
       {/* Top Section: Icon & Title */}
-      <div
-        className={`p-8 grow flex flex-col justify-center items-center ${bgSecondary}`}
+      <a
+        className={`p-6 grow flex flex-col justify-center items-center cursor-pointer ${bgSecondary}`}
+        href={link || repo}
+        target="_blank"
       >
         <Icon size={64} className={`${THEME.accent.text} mb-4`} />
         <h3 className="text-2xl font-bold text-center">{title}</h3>
-      </div>
+      </a>
 
       {/* Bottom Section: Details */}
-      <div className="p-8 flex flex-col h-full">
-        <h3 className="text-xl font-bold mb-2">{subtitle}</h3>
-        <p className={`mb-4 text-sm leading-relaxed ${textSub}`}>
+      <div className="p-6 flex flex-col h-full">
+        {/* Description */}
+        <p
+          className={`mb-8 text-sm leading-relaxed grow line-clamp-4 ${textSub}`}
+        >
           {description}
         </p>
 
@@ -57,7 +53,18 @@ const ProjectCard = ({ project, isDarkMode }) => {
         </div>
 
         {/* Links */}
-        <div className="flex gap-4 mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+        <div className={`flex gap-8 mt-auto pt-4 border-t ${border} `}>
+          {repo && (
+            <a
+              href={repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-2 ${THEME.accent.text} font-bold hover:underline`}
+              aria-label="View GitHub Repository"
+            >
+              <Github size={16} /> Source Code
+            </a>
+          )}
           {link && (
             <a
               href={link}
@@ -67,17 +74,6 @@ const ProjectCard = ({ project, isDarkMode }) => {
               aria-label="Launch Project"
             >
               Launch <ExternalLink size={16} />
-            </a>
-          )}
-          {repo && (
-            <a
-              href={repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 ${THEME.accent.text} font-bold hover:underline`}
-              aria-label="View GitHub Repository"
-            >
-              GitHub <Github size={16} />
             </a>
           )}
         </div>

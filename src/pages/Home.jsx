@@ -21,6 +21,7 @@ import {
   User,
   ExternalLink,
   Download,
+  CircleUserRound,
 } from "lucide-react";
 
 // Theme configuration
@@ -192,12 +193,23 @@ const Home = ({ isDarkMode, openContact }) => {
   const PROJECTS = [
     {
       id: 1,
+      title: "Portfolio Website",
+      subtitle: "Mobile App",
+      description:
+        "My personal portfolio built to showcase my work. Features a secure Firebase-powered Admin Dashboard that allows for full CRUD operations to manage gallery content in real-time.",
+      icon: CircleUserRound,
+      tags: ["React", "Tailwind CSS", "Firebase", "Vite"],
+      link: "https://www.zsombor-pinter.site",
+      repo: "https://github.com/Esgawd9/Portfolio",
+    },
+    {
+      id: 2,
       title: "Reflex Game",
       subtitle: "Mobile App",
       description:
-        "A simple reflex game developed in Java/Gradle using Firebase for backend services. Players can test their reaction times and compete on leaderboards.",
+        "A simple mobile game developed in Java/Gradle using Firebase for backend services. Players can test their reaction times and compete on leaderboards.",
       icon: Gamepad2,
-      tags: ["App", "Android", "Game", "Firebase"],
+      tags: ["Android", "Java/Gradle", "Firebase"],
       link: null,
       repo: "https://github.com/Esgawd9/Reflex-Game",
     },
@@ -361,6 +373,24 @@ const Home = ({ isDarkMode, openContact }) => {
           </div>
         </section>
 
+        {/* FEATURED PROJECTS */}
+        <section id="projects">
+          <div className="flex items-center gap-3 mb-8">
+            <Code className={`w-6 h-6 ${THEME.accent.text}`} />
+            <h2 className="text-3xl font-bold">Featured Projects</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {PROJECTS.map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                isDarkMode={isDarkMode}
+              />
+            ))}
+          </div>
+        </section>
+
         {/* EXPERIENCE & EDUCATION */}
         <div className="grid md:grid-cols-2 gap-12">
           <section>
@@ -400,24 +430,6 @@ const Home = ({ isDarkMode, openContact }) => {
             </div>
           </section>
         </div>
-
-        {/* TODO: FEATURED PROJECTS */}
-        {/* <section id="projects">
-          <div className="flex items-center gap-3 mb-8">
-            <Code className={`w-6 h-6 ${THEME.accent.text}`} />
-            <h2 className="text-3xl font-bold">Featured Projects</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {PROJECTS.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                isDarkMode={isDarkMode}
-              />
-            ))}
-          </div>
-        </section> */}
       </div>
     </>
   );

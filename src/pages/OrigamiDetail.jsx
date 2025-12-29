@@ -207,7 +207,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
         <div className="mb-8 pb-4 flex flex-col lg:flex-row gap-12">
           <div className="lg:w-2/3">
             <div
-              className="relative overflow-hidden shadow-2xl cursor-zoom-in group rounded-xl"
+              className="relative overflow-hidden cursor-pointer group rounded-xl"
               onClick={() => setLightboxOpen(true)}
             >
               <img
@@ -241,12 +241,18 @@ const OrigamiDetail = ({ isDarkMode }) => {
             </div>
           </div>
         </div>
+
+        {item.desc && (
+
         <div className={`p-6 rounded-xl border ${cardBg} ${border}`}>
           <h3 className="text-xl font-bold mb-3">Description</h3>
           <p className={`leading-relaxed ${textSub} lg:w-2/3`}>
-            {item.desc || "No description."}
+            { item.desc }
           </p>
         </div>
+        
+        )}
+
       </div>
     </>
   );
