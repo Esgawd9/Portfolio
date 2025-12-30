@@ -72,7 +72,8 @@ const Home = ({ isDarkMode, openContact }) => {
     ? THEME.dark.socialBorder
     : THEME.light.socialBorder;
 
-  const headerSocial = `${social} ${socialHover} ${socialBorder}`;
+  const headerSocial = `${social} ${socialHover} ${socialBorder} inline-flex items-center
+  w-50 md:justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2`;
 
   const EXPERIENCES = [
     {
@@ -249,7 +250,7 @@ const Home = ({ isDarkMode, openContact }) => {
               target="_blank"
               rel="noreferrer"
               className={`
-      inline-flex items-center w-50 justify-center md:w-auto w-50 justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2
+      
       ${headerSocial}
         
       } "}]"}
@@ -258,7 +259,7 @@ const Home = ({ isDarkMode, openContact }) => {
             >
               <Github size={16} className={THEME.accent.text} />
               GitHub
-              <ExternalLink size={10} />
+              <ExternalLink size={10} className="ml-auto" />
             </a>
 
             {/* LinkedIn */}
@@ -267,7 +268,7 @@ const Home = ({ isDarkMode, openContact }) => {
               target="_blank"
               rel="noreferrer"
               className={`
-      inline-flex items-center w-50 justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2
+      
       ${headerSocial}
       } "}]"}
     `}
@@ -275,7 +276,7 @@ const Home = ({ isDarkMode, openContact }) => {
             >
               <Linkedin size={16} className={THEME.accent.text} />
               LinkedIn
-              <ExternalLink size={10} />
+              <ExternalLink size={10} className="ml-auto"/>
             </a>
 
             {/* Email */}
@@ -283,7 +284,7 @@ const Home = ({ isDarkMode, openContact }) => {
               href="mailto:zsombor.pinter0105@gmail.com"
               rel="noreferrer"
               className={`
-      inline-flex items-center w-50 justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2
+      
       ${headerSocial}
       } "}]"}
     `}
@@ -297,7 +298,7 @@ const Home = ({ isDarkMode, openContact }) => {
             <Link
               to="/gallery"
               className={`
-      inline-flex items-center w-50 justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2
+      
       
       ${headerSocial} 
        "}]"}
@@ -313,7 +314,7 @@ const Home = ({ isDarkMode, openContact }) => {
               href="/resume.pdf"
               download="Zsombor_Pinter_Resume.pdf"
               className={`
-      inline-flex items-center w-50 justify-center md:w-auto gap-2 px-4 py-2 rounded-full border-2
+      
       ${headerSocial}
       } "}]"}
     `}
@@ -321,7 +322,7 @@ const Home = ({ isDarkMode, openContact }) => {
             >
               <FileText size={18} />
               Download CV
-              <Download size={14} />
+              <Download size={14} className="ml-auto"/>
             </a>
           </div>
 
