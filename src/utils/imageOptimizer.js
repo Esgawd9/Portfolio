@@ -3,13 +3,13 @@
 export const getOptimizedImageUrl = (firebaseUrl) => {
   if (!firebaseUrl) return "";
 
-  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-    return firebaseUrl;
-  }
+  // if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+  //   return firebaseUrl;
+  // }
 
-  if (!firebaseUrl.includes("firebasestorage.googleapis.com")) {
-    return firebaseUrl;
-  }
+  // if (!firebaseUrl.includes("firebasestorage.googleapis.com")) {
+  //   return firebaseUrl;
+  // }
 
   try {
     const urlObj = new URL(firebaseUrl);
