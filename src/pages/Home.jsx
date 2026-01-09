@@ -78,7 +78,7 @@ const Home = ({ isDarkMode, openContact }) => {
   const EXPERIENCES = [
     {
       title: "Intern - Full-stack Developer",
-      company: "IT NET SOLUTION LTD",
+      company: "IT NET Solution LTD",
       period: "2026 Jan - Present",
     },
     {
