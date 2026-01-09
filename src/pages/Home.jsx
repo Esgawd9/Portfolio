@@ -312,7 +312,7 @@ const Home = ({ isDarkMode, openContact }) => {
             {/* Resume */}
             <a
               href="/resume.pdf"
-              download="Zsombor_Pinter_Resume.pdf"
+              target="_blank"
               className={`
       
       ${headerSocial}
@@ -320,9 +320,9 @@ const Home = ({ isDarkMode, openContact }) => {
     `}
               aria-label="Download Resume"
             >
-              <FileText size={18} />
-              Download CV
-              <Download size={14} className="ml-auto"/>
+              <FileText size={18} className={THEME.accent.text} />
+              CV
+              <ExternalLink size={10} className="ml-auto"/>
             </a>
           </div>
 

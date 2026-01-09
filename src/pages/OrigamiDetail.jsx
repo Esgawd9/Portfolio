@@ -17,6 +17,7 @@ import {
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { THEME } from "../config/theme";
+import { getOptimizedImageUrl } from "../utils/imageOptimizer";
 
 import SEO from "../components/SEO";
 
@@ -135,6 +136,9 @@ const OrigamiDetail = ({ isDarkMode }) => {
     );
   }
 
+  // Generate the Clean URL
+  const cleanImageSrc = getOptimizedImageUrl(item.image);
+
   if (!item) {
     return (
       <div className="text-center py-32">
@@ -179,7 +183,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
               <X size={32} />
             </button>
             <img
-              src={item.image}
+              src={cleanImageSrc}
               alt="Full"
               className="max-h-[90vh] max-w-[90vw] object-contain rounded-md shadow-2xl"
               onClick={(e) => e.stopPropagation()}
@@ -211,7 +215,7 @@ const OrigamiDetail = ({ isDarkMode }) => {
               onClick={() => setLightboxOpen(true)}
             >
               <img
-                src={item.image}
+                src={cleanImageSrc}
                 alt={item.title}
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               />

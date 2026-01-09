@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/cdn/:path*",
+      "destination": "https://firebasestorage.googleapis.com/v0/b/portfolio-ad827.firebasestorage.app/o/:path*?alt=media"
+    },
+    {
       "source": "/((?!sitemap.xml|robots.txt).*)",
       "destination": "/index.html"
     }

@@ -7,10 +7,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Pencil, Trash2, Loader2 } from "lucide-react";
 import { THEME } from "../config/theme";
+import { getOptimizedImageUrl } from "../utils/imageOptimizer";
 
 const GalleryCard = ({ item, user, isDarkMode, handleEdit, handleDelete, index }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const isPriority = index < 6;
+
+  // Generate the Clean URL
+  const cleanImageSrc = getOptimizedImageUrl(item.image);
 
   return (
     <Link
@@ -55,7 +59,7 @@ const GalleryCard = ({ item, user, isDarkMode, handleEdit, handleDelete, index }
         )}
 
         <img
-          src={item.image}
+          src={cleanImageSrc}
           alt={
             item.title + " origami model origami model folded by Zsombor Pintér"
           }
