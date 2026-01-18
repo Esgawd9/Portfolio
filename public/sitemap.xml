@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- 1. The Home Page -->
   <url>
     <loc>https://www.zsombor-pinter.site</loc>
@@ -23,4 +24,103 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+
+  <!-- Image Gallery -->
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1766485112449_1000001549.jpg</image:loc>
+      <image:title>Doberman Pinscher</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1765809769508_1000001470.jpg</image:loc>
+      <image:title>Ryujin 1.2</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1764352053834_1000001354.jpg</image:loc>
+      <image:title>Tree Frog</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763807400836_1000001324.jpg</image:loc>
+      <image:title>Scorpion</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1766241965954_1000001520.jpg</image:loc>
+      <image:title>Rat by Eric Joisel</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763627495297_kyohei_spider.jpg</image:loc>
+      <image:title>Spider by Katsuta Kyohei</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763640872976_1000001215.jpg</image:loc>
+      <image:title>Swan by Eric Joisel</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763640614052_simple_dragon.jpg</image:loc>
+      <image:title>Simple Dragon by Shuki Kato</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+  
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763640970498_1000000396.jpg</image:loc>
+      <image:title>Tree Frog by Satoshi Kamiya</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763758956090_1000001314.jpg</image:loc>
+      <image:title>Cockroach by Robert J. Lang</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763758900567_1000001312.jpg</image:loc>
+      <image:title>Dollar Koi Fish by Won Park</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763640105550_IMG_20250505_210708735_HDR.jpg</image:loc>
+      <image:title>Fiery Dragon by Kade Chan</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763797180489_1000001319.jpg</image:loc>
+      <image:title>Wolf by Jo Nakashima and Camila Zeymer</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763731417346_1000001305.jpg</image:loc>
+      <image:title>Kawasaki Rose by Toshikazu Kawasaki</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763721135107_1000001301.jpg</image:loc>
+      <image:title>Cat by Seiji Nishikawa</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
+  <image:image>
+      <image:loc>https://www.zsombor-pinter.site/cdn/origami%2F1763644206970_1000001292.jpg</image:loc>
+      <image:title>Capybara by Jo Nakashima</image:title>
+      <image:caption>Origami model folded by Zsombor Pintér</image:caption>
+  </image:image>
+
 </urlset>
